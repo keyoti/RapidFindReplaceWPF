@@ -1,0 +1,417 @@
+﻿<Window x:Class="MultipleControlTypesSupported"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:RapidFindReplace="clr-namespace:Keyoti.RapidFindReplace.WPF;assembly=Keyoti4.RapidFindReplace.WPF"
+        xmlns:local="clr-namespace:RapidFindReplace_Demo_VB"
+        Title="MultipleControlTypesSupported" Height="619" Width="1120" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,50">
+        <Menu Height="22" VerticalAlignment="Top">
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Find..." Click="MenuItem_Click" />
+            </MenuItem>
+        </Menu>
+        <RapidFindReplace:RapidFindReplacePopupControl x:Name="findCtrl"
+            DockingPosition="TopRight"/>
+        <Grid Margin="0,22,720,-41" x:Name="g1">
+
+            <Label Margin="0,0,0,0">FlowDocumentScrollViewer</Label>
+            <FlowDocumentScrollViewer Name="fld" BorderBrush="Gray" BorderThickness="5"  ScrollViewer.VerticalScrollBarVisibility="Visible" Margin="0,25,0,4" PreviewKeyDown="fld_PreviewKeyDown">
+
+                <FlowDocument PagePadding="5,0,5,0" AllowDrop="True" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+                    <Paragraph Margin="0,0,0,4" BorderThickness="0,0,0,1" BorderBrush="#FF000000" TextAlignment="Left" FontFamily="Georgia" FontSize="28.6666666666667">
+                        <Span FontStyle="Italic" Foreground="#FF000000" xml:lang="en">The Goldfinch</Span>
+                    </Paragraph>
+                    <Paragraph Margin="0,0,0,0" TextAlignment="Left" FontFamily="Arial" FontSize="13.3333333333333">
+                        <Span Foreground="#FF252525" xml:lang="ja-jp">From Wikipedia, the free encyclopedia</Span>
+                    </Paragraph>
+                    <Table CellSpacing="1.47" Margin="8.87,0,0,0">
+                        <Table.Columns>
+                            <TableColumn Width="118.13" />
+                            <TableColumn Width="233.87" />
+                        </Table.Columns>
+                        <TableRowGroup>
+                            <TableRow>
+                                <TableCell ColumnSpan="2" Padding="3.2,3.2,3.2,3.2" BorderThickness="1,1,1,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Center" FontFamily="Times New Roman" FontStyle="Italic" FontWeight="Bold" FontSize="15.3333333333333">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">The Goldfinch</Span>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell ColumnSpan="2" Padding="3.2,3.2,3.2,3.2" BorderThickness="1,0,1,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Center" FontFamily="Times New Roman" FontSize="12">
+                                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/File:The_goldfinch_by_donna_tart.png">
+                                            <Image Stretch="Fill" Width="199.68" Height="309.504" Source="../Images/The_goldfinch_by_donna_tart.png">
+                                            </Image>
+                                        </Hyperlink>
+                                    </Paragraph>
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Center" FontFamily="Times New Roman" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">Hardcover, 1st edition</Span>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="1,0,0,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontWeight="Bold" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">Author</Span>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="0,0,1,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontSize="12">
+                                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/Donna_Tartt">
+                                            <Span Foreground="#FF0B0080" xml:lang="ja-jp">
+                                                <Span.TextDecorations>
+                                                    <TextDecoration Location="Underline" />
+                                                </Span.TextDecorations> Donna Tartt
+                                            </Span>
+                                        </Hyperlink>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="1,0,0,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontWeight="Bold" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">Country</Span>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="0,0,1,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">United States</Span>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="1,0,0,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontWeight="Bold" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">Language</Span>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="0,0,1,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">English</Span>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="1,0,0,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontWeight="Bold" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">Published</Span>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="0,0,1,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontSize="12">
+                                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/Little,_Brown_and_Company">
+                                            <Span Foreground="#FF0B0080" xml:lang="ja-jp">
+                                                <Span.TextDecorations>
+                                                    <TextDecoration Location="Underline" />
+                                                </Span.TextDecorations> Little, Brown and Company
+                                            </Span>
+                                        </Hyperlink>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="1,0,0,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontWeight="Bold" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">Media type</Span>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="0,0,1,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">Print (</Span>
+                                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/Paperback">
+                                            <Span Foreground="#FF0B0080" xml:lang="ja-jp">
+                                                <Span.TextDecorations>
+                                                    <TextDecoration Location="Underline" />
+                                                </Span.TextDecorations> paperback
+                                            </Span>
+                                        </Hyperlink>
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">)</Span>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="1,0,0,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontWeight="Bold" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">Pages</Span>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="0,0,1,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">784</Span>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="1,0,0,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontWeight="Bold" FontSize="12">
+                                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/International_Standard_Book_Number">
+                                            <Span Foreground="#FF0B0080" xml:lang="ja-jp">
+                                                <Span.TextDecorations>
+                                                    <TextDecoration Location="Underline" />
+                                                </Span.TextDecorations> ISBN
+                                            </Span>
+                                        </Hyperlink>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="0,0,1,0" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontSize="12">
+                                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/Special:BookSources/9781408704950">
+                                            <Span Foreground="#FF0B0080" xml:lang="ja-jp">
+                                                <Span.TextDecorations>
+                                                    <TextDecoration Location="Underline" />
+                                                </Span.TextDecorations> 9781408704950
+                                            </Span>
+                                        </Hyperlink>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="1,0,0,1" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontWeight="Bold" FontSize="12">
+                                        <Span Foreground="#FF000000" xml:lang="ja-jp">Preceded by</Span>
+                                    </Paragraph>
+                                </TableCell>
+                                <TableCell Padding="3.2,3.2,3.2,3.2" BorderThickness="0,0,1,1" BorderBrush="#FFAAAAAA" Background="#FFF9F9F9">
+                                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Times New Roman" FontSize="12">
+                                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Little_Friend">
+                                            <Span FontStyle="Italic" Foreground="#FF0B0080" xml:lang="ja-jp">
+                                                <Span.TextDecorations>
+                                                    <TextDecoration Location="Underline" />
+                                                </Span.TextDecorations> The Little Friend
+                                            </Span>
+                                        </Hyperlink>
+                                    </Paragraph>
+                                </TableCell>
+                            </TableRow>
+                        </TableRowGroup>
+                    </Table>
+
+                    
+
+                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Arial" FontSize="14">
+                        <Span FontStyle="Italic" FontWeight="Bold" Foreground="#FF252525" xml:lang="en">The Goldfinch</Span>
+                        <Span Foreground="#FF252525" xml:lang="en"> is the </Span>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/Pulitzer_Prize_for_Fiction">
+                            <Span Foreground="#FF0B0080" xml:lang="en">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> Pulitzer Prize
+                            </Span>
+                        </Hyperlink>
+                        <Span Foreground="#FF252525" xml:lang="en">-winning third novel from </Span>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/Donna_Tartt">
+                            <Span Foreground="#FF0B0080" xml:lang="en">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> Donna Tartt
+                            </Span>
+                        </Hyperlink>
+                        <Span Foreground="#FF252525" xml:lang="en">, her first new book in 11 years.</Span>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Goldfinch#cite_note-1">
+                            <Span Foreground="#FF0B0080" xml:lang="en" Typography.Variants="Superscript">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> [1]
+                            </Span>
+                        </Hyperlink>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Goldfinch#cite_note-2">
+                            <Span Foreground="#FF0B0080" xml:lang="en" Typography.Variants="Superscript">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> [2]
+                            </Span>
+                        </Hyperlink>
+                        <Span Foreground="#FF252525" xml:lang="en"> In February 2013, the </Span>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/New_York_Observer">
+                            <Span FontStyle="Italic" Foreground="#FF0B0080" xml:lang="en">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> New York Observer
+                            </Span>
+                        </Hyperlink>
+                        <Span Foreground="#FF252525" xml:lang="en"> announced that Tartt's long-awaited third novel, titled </Span>
+                        <Span FontStyle="Italic" Foreground="#FF252525" xml:lang="en">The Goldfinch</Span>
+                        <Span Foreground="#FF252525" xml:lang="en">, was set for publication on October 22, 2013 after originally being slated for publication in September 2008.</Span>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Goldfinch#cite_note-3">
+                            <Span Foreground="#FF0B0080" xml:lang="en" Typography.Variants="Superscript">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> [3]
+                            </Span>
+                        </Hyperlink>
+                        <Span Foreground="#FF252525" xml:lang="en"> The book was selected as one of the 10 Best Books of 2013 by the editors of the </Span>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/New_York_Times_Book_Review">
+                            <Span FontStyle="Italic" Foreground="#FF0B0080" xml:lang="en">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> New York Times Book Review
+                            </Span>
+                        </Hyperlink>
+                        <Span Foreground="#FF252525" xml:lang="en">.</Span>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Goldfinch#cite_note-4">
+                            <Span Foreground="#FF0B0080" xml:lang="en" Typography.Variants="Superscript">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> [4]
+                            </Span>
+                        </Hyperlink>
+                    </Paragraph>
+                    <Paragraph Margin="0,16,0,4" TextAlignment="Center" FontFamily="Arial" FontWeight="Bold" FontSize="13.3333333333333" Background="#FFF9F9F9">
+                        <Span Foreground="#FF000000" xml:lang="en">Contents</Span>
+                    </Paragraph>
+                    <Paragraph Margin="0,0,0,0" TextAlignment="Center" FontFamily="Arial" FontSize="13.3333333333333" Background="#FFF9F9F9">
+                        <Span Foreground="#FF252525" xml:lang="en">  [</Span>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Goldfinch">
+                            <Span Foreground="#FF0B0080" xml:lang="en">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> hide
+                            </Span>
+                        </Hyperlink>
+                        <Span Foreground="#FF252525" xml:lang="en">] </Span>
+                    </Paragraph>
+                    <List MarkerStyle="Disc" Margin="0,0,0,0" Padding="0,0,0,0">
+                        <ListItem Margin="24,0,0,0">
+                            <Paragraph Margin="0,6.67,0,1.6" TextAlignment="Left" FontFamily="Arial" FontSize="13.3333333333333" Background="#FFF9F9F9">
+                                <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Goldfinch#Plot">
+                                    <Span Foreground="#FF0B0080" xml:lang="en">1 Plot</Span>
+                                </Hyperlink>
+                            </Paragraph>
+                        </ListItem>
+                        <ListItem Margin="24,0,0,0">
+                            <Paragraph Margin="0,6.67,0,1.6" TextAlignment="Left" FontFamily="Arial" FontSize="13.3333333333333" Background="#FFF9F9F9">
+                                <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Goldfinch#Reception">
+                                    <Span Foreground="#FF0B0080" xml:lang="en">2 Reception</Span>
+                                </Hyperlink>
+                            </Paragraph>
+                        </ListItem>
+                        <ListItem Margin="24,0,0,0">
+                            <Paragraph Margin="0,6.67,0,1.6" TextAlignment="Left" FontFamily="Arial" FontSize="13.3333333333333" Background="#FFF9F9F9">
+                                <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Goldfinch#Awards_and_honors">
+                                    <Span Foreground="#FF0B0080" xml:lang="en">3 Awards and honors</Span>
+                                </Hyperlink>
+                            </Paragraph>
+                        </ListItem>
+                        <ListItem Margin="24,0,0,0">
+                            <Paragraph Margin="0,6.67,0,1.6" TextAlignment="Left" FontFamily="Arial" FontSize="13.3333333333333" Background="#FFF9F9F9">
+                                <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Goldfinch#References">
+                                    <Span Foreground="#FF0B0080" xml:lang="en">4 References</Span>
+                                </Hyperlink>
+                            </Paragraph>
+                        </ListItem>
+                        <ListItem Margin="24,0,0,0">
+                            <Paragraph Margin="0,6.67,0,1.6" TextAlignment="Left" FontFamily="Arial" FontSize="13.3333333333333" Background="#FFF9F9F9">
+                                <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/The_Goldfinch#External_links">
+                                    <Span Foreground="#FF0B0080" xml:lang="en">5 External links</Span>
+                                </Hyperlink>
+                            </Paragraph>
+                        </ListItem>
+                    </List>
+                    <Paragraph Margin="0,16,0,4" BorderThickness="0,0,0,1" BorderBrush="#FF000000" TextAlignment="Left" FontFamily="Georgia" FontSize="21.3333333333333">
+                        <Span Foreground="#FF000000" xml:lang="en">Plot</Span>
+                        <Span FontFamily="Arial" FontSize="16" Foreground="#FF000000" xml:lang="en">[</Span>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/w/index.php?title=The_Goldfinch&amp;action=edit&amp;section=1">
+                            <Span FontFamily="Arial" FontSize="16" Foreground="#FF0B0080" xml:lang="en">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> edit
+                            </Span>
+                        </Hyperlink>
+                        <Span FontFamily="Arial" FontSize="16" Foreground="#FF000000" xml:lang="en">]</Span>
+                    </Paragraph>
+                    <Paragraph Margin="0,8,0,8" TextAlignment="Left" FontFamily="Arial" FontSize="14">
+                        <Span Foreground="#FF252525" xml:lang="en">A thirteen-year-old boy in New York City, Theodore "Theo" Decker, survives a terrorist bombing attack in an </Span>
+                        <Hyperlink NavigateUri="http://en.wikipedia.org/wiki/Art_museum">
+                            <Span Foreground="#FF0B0080" xml:lang="en">
+                                <Span.TextDecorations>
+                                    <TextDecoration Location="Underline" />
+                                </Span.TextDecorations> art museum
+                            </Span>
+                        </Hyperlink>
+                        <Span Foreground="#FF252525" xml:lang="en"> that takes the life of his mother (and dozens of other art-loving citizens). His father was not there, having deserted the family some time prior to these events. Theo adored his energetic, beautiful mother - as did many other people in Manhattan - and thinks of his father as an alcoholic, occasionally abusive, and as a thief....</Span>
+                    </Paragraph>
+                    <Paragraph Margin="0,0,0,13.33" TextAlignment="Left" FontFamily="Times New Roman" FontSize="14.6666666666667" />
+                </FlowDocument>
+            </FlowDocumentScrollViewer>
+        </Grid>
+
+        <Grid Margin="397,27,553,-41" >
+            <Label Margin="0,0,0,503" >DataGrid</Label>
+            <DataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="145" Width="155" Margin="0,29,-169,0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="First Name"  Binding="{Binding FirstName}"/>
+                    <DataGridTextColumn Header="Last Name"  Binding="{Binding LastName}"/>
+                </DataGrid.Columns>
+                <local:Customer FirstName="Kevin" LastName="Bridges"/>
+                <local:Customer FirstName="Lauren" LastName="Lapkus"/>
+                <local:Customer FirstName="Stewart" LastName="Lee"/>
+                <local:Customer FirstName="Marc" LastName="Maron"/>
+                <local:Customer FirstName="Donna" LastName="Tartt"/>
+                <local:Customer FirstName="Paul" LastName="Thompkins"/>
+
+            </DataGrid>
+        </Grid>
+
+        <Grid Margin="397,216,284,0">
+            <Label Margin="0,0,365,288">ListBox</Label>
+            <ListBox HorizontalAlignment="Left" Height="96" Margin="0,29,0,0" VerticalAlignment="Top" Width="421" Name="ListBox1">
+                <ListBoxItem Content="The Goldfinch"/>
+                <ListBoxItem Content="The Hundred-Year-Old Man Who Climbed Out the Window and Disappeared"/>
+            </ListBox>
+        </Grid>
+
+        <Grid Margin="624,27,284,328">
+            <Label  Content="ListView" Margin="0,-0,10,25" />
+            <ListView HorizontalAlignment="Left" Height="145"  VerticalAlignment="Top" Width="194" Margin="0,29,0,0">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Medium"/>
+                    </GridView>
+                </ListView.View>
+                <ListViewItem Content="Book"/>
+                <ListViewItem Content="Radio"/>
+                <ListViewItem Content="Podcast"/>
+                <ListViewItem Content="Stage"/>
+                <ListViewItem Content="Television"/>
+            </ListView>
+        </Grid>
+        <Grid Margin="397,369,284,-14">
+            <Label  Content="TreeView" Margin="0,-0,10,25" />
+            <TreeView Height="145"  VerticalAlignment="Top" Margin="0,29,10,0" >
+                <TreeViewItem Header="Female" IsExpanded="True">
+                    <TextBlock Text="Lauren Lapkus" />
+                    <TextBlock Text="Donna Tartt" />
+                </TreeViewItem>
+                <TreeViewItem Header="Male" IsExpanded="True">
+                    <TextBlock Text="Kevin Bridges" />
+                    <TextBlock Text="Stewart Lee" />
+                    <TextBlock Text="Marc Maron" />
+                    <TextBlock Text="Paul F. Thompkins" />
+                </TreeViewItem>
+            </TreeView>
+        </Grid>
+
+
+        <Grid Margin="864,27,24,443">
+            <Label  Content="ComboBox" />
+            <ComboBox Margin="0,29,6,0" VerticalAlignment="Top" IsEditable="True">
+                <ComboBoxItem Content="Books"/>
+                <ComboBoxItem Content="Radio"/>
+                <ComboBoxItem Content="Television"/>
+            </ComboBox>
+        </Grid>
+
+        <Grid Margin="864,102,24,328">
+            <Label  Content="TextBox" />
+            <TextBox Margin="0,29,6,0" AcceptsReturn="True" />
+        </Grid>
+
+        <Grid Margin="864,246,24,10">
+            <Label  Content="RichTextBox" />
+            <RichTextBox Margin="0,29,6,0" AcceptsReturn="True" />
+        </Grid>
+
+    </Grid>
+</Window>
+

@@ -1,0 +1,34 @@
+﻿<Window x:Class="RapidFindReplace_Demo_CS.Views.OfficeStyle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:RapidFindReplace="clr-namespace:Keyoti.RapidFindReplace.WPF;assembly=Keyoti4.RapidFindReplace.WPF"
+        Title="Office Style" Height="289" Width="1001">
+    <Window.Resources>
+        <ResourceDictionary Source="pack://application:,,,/Keyoti4.RapidFindReplace.WPF;component/Resources/OfficeStyle.xaml"/>
+    </Window.Resources>
+    <Grid>
+        <RapidFindReplace:RapidFindReplacePopupControl Style="{DynamicResource Keyoti_RapidFindReplacePopupControlMSWordStyle}"/>
+        <TextBox Text="NorthWind Inc." Height="26" Margin="143,39,68,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.108,-1.13"/>
+        <RichTextBox Margin="143,81,68,10" RenderTransformOrigin="-0.78,-1.1" ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <FlowDocument>
+                <Paragraph>
+                    Starting in 2009 we were contracted to perform scoping and analysis for a variety of projects that NorthWind Inc. were a subcontractor for.
+                </Paragraph>
+                <Paragraph>
+                    The implementation of the required studies, and their overarching management framework were, going forward, integrated with regards to customer objectives.  
+                        A rigorous, heterogeneous framework was put in place upon which to action out requirements for deliverables.  
+                        Leveraging core competencies and drilling down into stakeholder objectives we were able blue sky it and circle back in relationship to Q4.
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Label Content="Customer Name" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.474,-0.308" Margin="0,37,0,0"/>
+        <Menu Height="22" VerticalAlignment="Top">
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Find..." Command="Find"/>
+            </MenuItem>
+        </Menu>
+        <Label Content="Work Perfomed" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.474,-0.308" Margin="0,79,0,0"/>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,1402 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+    xmlns:local="clr-namespace:Keyoti.RapidFindReplace.WPF"
+    xmlns:localConverters="clr-namespace:Keyoti.RapidFindReplace.WPF.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d"
+    >
+
+
+<!--Overrides grid view highlighting in listview, so that there's no glass effect or border remnant after selection-->
+	<Style x:Key="Keyoti_ListViewItemContainerStyle1" TargetType="{x:Type ListViewItem}">
+
+        <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self}, Path=Content.Description }" />
+        <Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type ListViewItem}">
+ 
+					<Border SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						Background="{TemplateBinding Background}">
+ 
+						<Grid>
+ 
+							<!-- This is used when GridView is put inside the ListView -->
+                            <GridViewRowPresenter Content="{TemplateBinding Content}"
+								HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+								SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                <GridViewRowPresenter.Resources>
+                                    <Style TargetType="{x:Type ContentPresenter}">
+                                        <Setter Property="AutomationProperties.AutomationId" Value="{Binding RelativeSource={RelativeSource Self}, Path=Content.OptionName }"/>
+                                    </Style>
+                                </GridViewRowPresenter.Resources>
+                            </GridViewRowPresenter>
+
+                            <!-- This is used for ListView that does not use GridView -->
+							<ContentPresenter x:Name="contentPresenter"
+								Content="{TemplateBinding Content}"
+								Visibility="Collapsed"
+								ContentTemplate="{TemplateBinding ContentTemplate}"
+								ContentStringFormat="{TemplateBinding ContentStringFormat}"
+								HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+								VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+								SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+						</Grid>
+ 
+					</Border>
+ 
+					<ControlTemplate.Triggers>
+						<Trigger Property="GridView.ColumnCollection" Value="{x:Null}">
+							<Setter TargetName="contentPresenter" Property="Visibility" Value="Visible"/>
+						</Trigger>
+						<Trigger Property="IsSelected" Value="True">
+							<Setter Property="Background" Value="Transparent" />
+							<Setter Property="BorderBrush" Value="Transparent" />
+							<Setter Property="BorderThickness" Value="1" />
+						</Trigger>
+						<Trigger Property="IsMouseOver" Value="True">
+							<Setter Property="Background" Value="Orange" />
+							<Setter Property="BorderBrush" Value="Transparent" />
+							<Setter Property="BorderThickness" Value="1" />
+						</Trigger>
+                                                 
+						<Trigger Property="IsEnabled" Value="False">
+							<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+ 
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+
+
+
+
+		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                                            
+
+	</Style>
+
+	<localConverters:CamelCaseConverter x:Key="Keyoti_CamelCaseConverter"/>
+	<localConverters:BooleanOrConverter x:Key="Keyoti_BooleanOrConverter"/>
+    <localConverters:BooleanAndConverter x:Key="Keyoti_BooleanAndConverter"/>
+	<localConverters:BooleanCollapsedVisibilityConverter x:Key="Keyoti_BooleanCollapsedVisibilityConverter"/>
+    <localConverters:QueryConverter x:Key="Keyoti_QueryConverter"/>
+
+	<SolidColorBrush x:Key="Keyoti_BodyHighlightAdornerBrush" options:Freeze="true" Color="#66FDDB07" />
+	<SolidColorBrush x:Key="Keyoti_BodyIterativeHighlightAdornerBrush" options:Freeze="true" Color="#660777FD" />
+	
+
+	<SolidColorBrush x:Key="Keyoti_FindButtonBackgroundMouseOverBrush" options:Freeze="true" Color="#FFFDFDFD" />
+
+	
+	<SolidColorBrush x:Key="Keyoti_ButtonPressedBackgroundBrush" options:Freeze="true" Color="#FF7EB3D1" />
+
+	<SolidColorBrush x:Key="Keyoti_OptionsButtonBackgroundMouseOverBrush" options:Freeze="true" Color="#FFFDFDFD" />
+
+	<SolidColorBrush x:Key="Keyoti_NextMatchIconMouseOverBrush" options:Freeze="true" Color="#FFFDFDFD" />
+
+	<SolidColorBrush x:Key="Keyoti_BackgroundBrush" options:Freeze="true" Color="#FFDDDDDD" />
+	<SolidColorBrush x:Key="Keyoti_FindBoxBackgroundBrush" options:Freeze="true" Color="#FFEFEFEF" />
+	
+
+	<LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="Keyoti_MagnifyingGlassStrokeBrush" options:Freeze="true">
+		<GradientStop Color="#FF888888" Offset="0.0" />
+		<GradientStop Color="#FF000000" Offset="1.0" />
+	</LinearGradientBrush>
+
+	<DrawingBrush x:Key="Keyoti_ReplaceIconBrush" Viewbox="0,0,22,28" ViewboxUnits="Absolute">
+    			<DrawingBrush.Drawing>
+    				<DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,3.583,15.354"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Brush="#FF4B4B4B">
+    							<GeometryDrawing.Geometry>
+    								<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0.5,0.5,9.917,9"/>
+    							</GeometryDrawing.Geometry>
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="#FF3C3C3C" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,4.437,9.021"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M5.0000016,0.50000066 L0.5,0.50000066 0.5,4.8330008">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="#FF4D4B4B" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,2.562,12"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Brush="#FF4B4B4B" Geometry="M0.4999982,0.49999936 L2.2917824,1.8539991 3.9379938,0.5624748">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="#FF3C3C3C" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,10,7.625"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M0.39777884,0.76351519 L2.3627353,0.25000022 3.4924789,1.0906031 3.5097906,2.3972363 3.5290025,3.8472943 3.5419995,4.8282788 1.9699145,4.8749995 0.6434681,4.6877578 0.25000007,3.9870004 0.59429182,2.7723539 2.0681456,2.5387676 3.1489723,2.3986161">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="0.5"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,15.333,6.292"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M0.25000015,0.25000005 L0.25000015,3.2079964 0.25000015,6.1663265 0.7919996,6.1246592 1.542,6.2079998 2.2920004,6.1663265 3.2499596,5.5830351 3.6670006,3.749804 2.833585,2.5415383 1.7918168,2.249888 0.4583538,3.0829966">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="0.5"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,10,18.594"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M3.094488,0.53124968 L2.0004681,0.25 0.90691619,0.656329 0.25000038,2.0941085 0.31276081,3.125169 1.0628895,4.1252295 2.0318064,4.4689993 2.6881683,4.3437499 3.1569996,4.0000001">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="White" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="0.8"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,5,18.312"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M0.39777884,0.76362622 L2.3627353,0.25000022 3.4924789,1.0907849 3.5097906,2.3977006 3.5290025,3.8480721 3.5419995,4.8292687 1.9699145,4.8759995 0.6434681,4.6887173 0.25000007,3.9878084 0.59429182,2.7728993 2.0681456,2.5392625 3.1489723,2.3990807">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="White" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="0.8"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    				</DrawingGroup>
+    			</DrawingBrush.Drawing>
+    		</DrawingBrush>
+			
+    <DrawingBrush x:Key="Keyoti_ReplaceAllIconBrush" Viewbox="0,0,22,28" ViewboxUnits="Absolute">
+    			<DrawingBrush.Drawing>
+    				<DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,6.125,16.625"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing>
+    							<GeometryDrawing.Geometry>
+    								<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0.375,0.375,11.125,7.25"/>
+    							</GeometryDrawing.Geometry>
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="#FF3C3C3C" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="0.75"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,3.583,15.354"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Brush="#FF4B4B4B">
+    							<GeometryDrawing.Geometry>
+    								<RectangleGeometry RadiusY="0" RadiusX="0" Rect="0.5,0.5,9.917,9"/>
+    							</GeometryDrawing.Geometry>
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="#FF3C3C3C" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,4.437,9.021"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M5.0000016,0.50000066 L0.5,0.50000066 0.5,4.8330008">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="#FF4D4B4B" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,2.562,12"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Brush="#FF4B4B4B" Geometry="M0.4999982,0.49999936 L2.2917824,1.8539991 3.9379938,0.5624748">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="#FF3C3C3C" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,10,7.625"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M0.39777884,0.76351519 L2.3627353,0.25000022 3.4924789,1.0906031 3.5097906,2.3972363 3.5290025,3.8472943 3.5419995,4.8282788 1.9699145,4.8749995 0.6434681,4.6877578 0.25000007,3.9870004 0.59429182,2.7723539 2.0681456,2.5387676 3.1489723,2.3986161">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="0.5"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,15.333,6.292"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M0.25000015,0.25000005 L0.25000015,3.2079964 0.25000015,6.1663265 0.7919996,6.1246592 1.542,6.2079998 2.2920004,6.1663265 3.2499596,5.5830351 3.6670006,3.749804 2.833585,2.5415383 1.7918168,2.249888 0.4583538,3.0829966">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="Black" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="0.5"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,10,18.594"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M2.9509392,0.66125089 L1.9698212,0.4 0.98912298,0.77743621 0.40000034,2.1129797 0.45628395,3.0707247 1.129,3.9996739 1.9979254,4.3189993 2.5865514,4.2026561 3.0069996,3.8833492">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="White" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="0.8"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,5,18.312"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M0.53431175,0.88031713 L2.3202017,0.4000002 3.3469918,1.1862593 3.3627258,2.4084204 3.380187,3.7647341 3.3919995,4.6822992 1.9631787,4.7259995 0.75761135,4.5508628 0.40000007,3.8954083 0.7129165,2.7592871 2.052458,2.5408019 3.0347889,2.409711">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="White" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="0.8"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    					<DrawingGroup>
+    						<DrawingGroup.Transform>
+    							<MatrixTransform Matrix="1,0,0,1,17,18.625"/>
+    						</DrawingGroup.Transform>
+    						<GeometryDrawing Geometry="M0.725,0.25 L2.625,0.25 2.625,4.25 0.25,4.25">
+    							<GeometryDrawing.Pen>
+    								<Pen Brush="#FF3C3C3C" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="0.5"/>
+    							</GeometryDrawing.Pen>
+    						</GeometryDrawing>
+    					</DrawingGroup>
+    				</DrawingGroup>
+    			</DrawingBrush.Drawing>
+    		</DrawingBrush>
+
+	
+	<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_MagnifyingGlassIconBrush" >
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>                    
+						<GeometryGroup>
+							<LineGeometry StartPoint="0,5" EndPoint="4,1" />
+							<EllipseGeometry Center="6,-1" RadiusX="3" RadiusY="3"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness="1.3" Brush="{StaticResource Keyoti_MagnifyingGlassStrokeBrush}" />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="-3.8,-8,18,18"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness="1.3" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+
+
+
+	<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_OptionsIconBrush" >
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing Brush="Black">
+					<GeometryDrawing.Geometry>
+						<Geometry>M 3 10 L 5 14 L 7 10 Z</Geometry>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+                        <Pen Thickness=".6" Brush="{StaticResource Keyoti_MagnifyingGlassStrokeBrush}" />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="0,0,11,26"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".2" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+
+	<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_OptionsCheckedIconBrush" >
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing Brush="White">
+					<GeometryDrawing.Geometry>
+						<Geometry>M 3 10 L 5 14 L 7 10 Z</Geometry>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".6" Brush="White"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="0,0,11,26"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".2" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+
+
+
+	<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_CrossIconBrush">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<LineGeometry StartPoint="-.5,.5" EndPoint=".5,-.5" />
+							<LineGeometry StartPoint=".5,.5" EndPoint="-.5,-.5" />
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+                        <Pen Thickness=".2" Brush="{StaticResource Keyoti_MagnifyingGlassStrokeBrush}" />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="-1.5,-1.3,3,3"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".3" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+
+		<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_CloseIconBrush">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<LineGeometry StartPoint="-.5,.5" EndPoint=".5,-.5" />
+							<LineGeometry StartPoint=".5,.5" EndPoint="-.5,-.5" />
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+                        <Pen Thickness=".2" Brush="{StaticResource Keyoti_MagnifyingGlassStrokeBrush}" />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="-1.0,-1.0,2,2"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".3" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+	
+	<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_ExpandIconBrush">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing >
+					<GeometryDrawing.Geometry>
+						<Geometry>M 2 11.5 L 5 15 L 8 11.5</Geometry>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness="2" Brush="#FF666666" />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="0,0,10,26"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".2" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+
+	
+	<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_ExpandMouseOverIconBrush">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing >
+					<GeometryDrawing.Geometry>
+						<Geometry>M 2 11.5 L 5 15 L 8 11.5</Geometry>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness="2" Brush="#FF2255FF" />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="0,0,10,26"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".2" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+
+	<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_ContractIconBrush">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing >
+					<GeometryDrawing.Geometry>
+						<Geometry>M 2 15 L 5 11.5 L 8 15</Geometry>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness="2" Brush="#FF666666" />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="0,0,10,26"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".2" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+
+	
+	<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_ContractMouseOverIconBrush">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing >
+					<GeometryDrawing.Geometry>
+						<Geometry>M 2 15 L 5 11.5 L 8 15</Geometry>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness="2" Brush="#FF2255FF" />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="0,0,10,26"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".2" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+
+
+	<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_NextMatchIconBrush">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing Brush="#FF666666">
+					<GeometryDrawing.Geometry>
+						<Geometry>M 2 10 L 5 16 L 8 10 Z</Geometry>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".6" Brush="#FF999999" />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="0,0,10,26"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".2" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+
+	
+	<DrawingBrush Stretch="Fill" options:Freeze="true" x:Key="Keyoti_PreviousMatchIconBrush">
+		<DrawingBrush.Drawing>
+			<DrawingGroup>
+				<GeometryDrawing Brush="#FF666666" >
+					<GeometryDrawing.Geometry>
+						<Geometry>M 2 16 L 5 10 L 8 16 Z</Geometry>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".6" Brush="#FF999999" />
+					</GeometryDrawing.Pen>
+					
+				</GeometryDrawing>
+				<GeometryDrawing>
+					<GeometryDrawing.Geometry>
+						<GeometryGroup>
+							<RectangleGeometry Rect="0,0,10,26"/>
+						</GeometryGroup>
+					</GeometryDrawing.Geometry>
+					<GeometryDrawing.Pen>
+						<Pen Thickness=".2" Brush="Transparent"  />
+					</GeometryDrawing.Pen>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingBrush.Drawing>
+	</DrawingBrush>
+
+    
+
+
+	<Style TargetType="{x:Type local:RapidFindReplacePopupControl}">
+        
+		<Setter Property="Template">
+			<Setter.Value>
+				
+				<ControlTemplate TargetType="{x:Type local:RapidFindReplacePopupControl}">
+                    
+					
+					<local:PinnedPopup x:Name="PART_Popup" Width="266" >
+                        <Border x:Name="mainBorder"  BorderBrush="#FFc6c6c6" BorderThickness="1" Padding="10 0 5 5" Background="{StaticResource Keyoti_BackgroundBrush}"
+						
+						>
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="20"/>
+									<RowDefinition Height="4"/>
+									<RowDefinition Height="*"/>
+								</Grid.RowDefinitions>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition/>
+									<ColumnDefinition Width="28"/>
+								</Grid.ColumnDefinitions>
+								
+
+									
+									<Thumb Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Stretch" VerticalAlignment="Top" 
+									 Height="20" 
+									 x:Name="PART_MoveThumb" Margin="-11,0,-4.812,0" Grid.ColumnSpan="2" Background="#FF4B4B4B" >
+										<Thumb.Resources>
+											<Style  TargetType="{x:Type Thumb}">
+    								
+    											<Setter Property="Template">
+    												<Setter.Value>
+    													<ControlTemplate TargetType="{x:Type Thumb}">
+    														<Border BorderBrush="#FFc6c6c6" BorderThickness="0 0 0 1">
+    															<Grid>
+    															<Rectangle Name="MoveThumbRectangle" Fill="#FFd0d0d0"/>
+																<TextBlock Padding="5 0 0 0" Foreground="#ff404040" VerticalAlignment="Center">Find / Replace</TextBlock>
+																
+															</Grid>
+															</Border>
+    													</ControlTemplate>
+    												</Setter.Value>
+    											</Setter>
+    										</Style>
+										</Thumb.Resources>										
+										</Thumb>
+
+									<Thumb Grid.Column="0" Grid.Row="2" Margin="-11,0,0,-6" HorizontalAlignment="Left" VerticalAlignment="Bottom" 
+									RenderTransformOrigin=".5,5" Height="9.25" Width="8.75" Cursor="SizeWE" x:Name="PART_Thumb">
+										<Thumb.Resources>
+											<Style  TargetType="{x:Type Thumb}">
+    											<Setter Property="MinWidth" Value="{DynamicResource {x:Static SystemParameters.VerticalScrollBarWidthKey}}"/>
+    											<Setter Property="MinHeight" Value="{DynamicResource {x:Static SystemParameters.HorizontalScrollBarHeightKey}}"/>
+    											<Setter Property="Background" Value="Transparent"/>
+    											<Setter Property="Template">
+    												<Setter.Value>
+    													<ControlTemplate TargetType="{x:Type Thumb}">
+    														<Grid Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+    															<Path Data="M 9,0 L 11,0 L 11,11 L 0,11 L 0,9 L 3,9 L 3,6 L 6,6 L 6,3 L 9,3 z" HorizontalAlignment="Right" Margin="0,0,2,2" VerticalAlignment="Bottom">
+    																<Path.Fill>
+    																	<DrawingBrush TileMode="Tile" Viewbox="0,0,3,3" Viewport="0,0,3,3" ViewportUnits="Absolute" ViewboxUnits="Absolute">
+    																		<DrawingBrush.Drawing>
+    																			<DrawingGroup>
+    																				<GeometryDrawing Brush="#FF777777" Geometry="M 0,0 L 2,0 L 2,2 L 0,2 z "/>
+    																			</DrawingGroup>
+    																		</DrawingBrush.Drawing>
+    																	</DrawingBrush>
+    																</Path.Fill>
+    															</Path>
+    														</Grid>
+    													</ControlTemplate>
+    												</Setter.Value>
+    											</Setter>
+    										</Style>
+										</Thumb.Resources>
+										<Thumb.RenderTransform>
+											<TransformGroup>
+												<ScaleTransform ScaleY="1" ScaleX="-1"/>
+												<SkewTransform AngleY="0" AngleX="0"/>
+												<RotateTransform Angle="0"/>
+												<TranslateTransform/>
+											</TransformGroup>
+										</Thumb.RenderTransform>
+										</Thumb>
+									
+								<local:RapidFindReplaceControl Grid.Row="2" Grid.ColumnSpan="2"  x:Name="PART_RapidFindReplaceControl" Grid.Column="0"  Margin="0,0" HorizontalAlignment="Left" Width="Auto" KeyboardNavigation.TabIndex="1"  />
+
+								<Button Grid.Column="1" Grid.Row="0" Height="16" x:Name="PART_CloseButton"  
+									Width="16" VerticalAlignment="Center" HorizontalAlignment="Right"
+									Background="{StaticResource Keyoti_CloseIconBrush}" TabIndex="2"
+									
+                                            >
+									<Button.Template>
+										<ControlTemplate TargetType="{x:Type Button}">
+											<Border x:Name="Border"  BorderBrush="Transparent">
+                                            
+												<ContentPresenter>
+													<ContentPresenter.Content>
+														<Rectangle Fill="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+													</ContentPresenter.Content>
+												</ContentPresenter>
+											</Border>
+											<ControlTemplate.Triggers>
+                                          
+												<Trigger Property="IsMouseOver" Value="true">
+                                                    <Setter TargetName="Border" Property="Background" Value="{StaticResource Keyoti_FindButtonBackgroundMouseOverBrush}" />
+												</Trigger>
+												<Trigger Property="IsPressed" Value="true">
+													<Setter Property="Background" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+												</Trigger>
+                                            
+											</ControlTemplate.Triggers>
+										</ControlTemplate>
+									</Button.Template>
+								</Button>
+
+
+								
+								
+							</Grid>
+						</Border>
+					</local:PinnedPopup>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+
+	
+<ControlTemplate x:Key="Keyoti_QueryErrorTemplate">
+        
+        <StackPanel Orientation="Horizontal">
+
+            <Grid>
+
+                <AdornedElementPlaceholder x:Name="adorner"/>
+                    <Button Content="!" x:Name="exclaimationMark" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="-6"
+					Opacity=".3"  BorderBrush="#FF464646" BorderThickness="0"
+                       Foreground="White" Background="#FFB20909" Width="15.5" Height="20"   >
+					   <Button.Template>
+						<ControlTemplate TargetType="{x:Type Button}">
+						<Grid>
+        					<VisualStateManager.VisualStateGroups>
+        						<VisualStateGroup x:Name="CommonStates">
+        							<VisualState x:Name="Normal"/>
+        							<VisualState x:Name="MouseOver">
+        								<Storyboard>
+        									<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+        										<EasingColorKeyFrame KeyTime="0" Value="#FFFF1010"/>
+        									</ColorAnimationUsingKeyFrames>
+        									<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+        										<EasingColorKeyFrame KeyTime="0" Value="#FFC53434"/>
+        									</ColorAnimationUsingKeyFrames>
+        								</Storyboard>
+        							</VisualState>
+        							<VisualState x:Name="Pressed"/>
+        							<VisualState x:Name="Disabled"/>
+        						</VisualStateGroup>
+        					</VisualStateManager.VisualStateGroups>
+        					<Rectangle Width="Auto" Height="{TemplateBinding Height}" Margin="0,0,0,0" RadiusX="2" RadiusY="2">
+        						<Rectangle.Stroke>
+        							<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        								<GradientStop Color="#FFFF1F1F" Offset="0"/>
+        								<GradientStop Color="#FFA40101" Offset="1"/>
+        							</LinearGradientBrush>
+        						</Rectangle.Stroke></Rectangle>
+        					<Rectangle x:Name="rectangle" Stroke="#FFF0F0F0" HorizontalAlignment="Left" Width="14.333" Margin="1,1,01,1" >
+        						<Rectangle.Fill>
+        							<LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+        								<GradientStop Color="#FF801D1D" Offset="1"/>
+        								<GradientStop Color="#FFD80B0B"/>
+        							</LinearGradientBrush>
+        						</Rectangle.Fill>
+        					</Rectangle>
+        					<ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
+
+        				</Grid>
+        				<ControlTemplate.Triggers>
+        					<Trigger Property="IsFocused" Value="True"/>
+        					<Trigger Property="IsDefaulted" Value="True"/>
+        					<Trigger Property="IsMouseOver" Value="True"/>
+        					<Trigger Property="IsPressed" Value="True"/>
+        					<Trigger Property="IsEnabled" Value="False"/>
+        				</ControlTemplate.Triggers>
+						</ControlTemplate>
+					   </Button.Template>
+<ToolTipService.ToolTip>
+                            <ToolTip x:Name="exclaimationToolTip" Content="{Binding Source={x:Reference adorner}, Path=AdornedElement.(Validation.Errors).CurrentItem.ErrorContent}"/>
+</ToolTipService.ToolTip>
+                    </Button>
+                   
+                
+            </Grid>
+  
+    </StackPanel>
+    <ControlTemplate.Triggers>
+            
+            
+        <DataTrigger Value="True">
+            <DataTrigger.Binding>
+                    <MultiBinding Converter="{StaticResource Keyoti_BooleanOrConverter}">
+                    <Binding ElementName="adorner" Path="AdornedElement.IsKeyboardFocused" />
+                    <Binding ElementName="exclaimationMark" Path="IsMouseOver"/>
+                </MultiBinding>
+            </DataTrigger.Binding>
+            <DataTrigger.EnterActions>
+                <BeginStoryboard x:Name="fadeInStoryboard">
+                    <Storyboard>
+                        <DoubleAnimation Duration="00:00:00.15"
+                                         Storyboard.TargetName="exclaimationMark"
+                                         Storyboard.TargetProperty="Opacity"
+                                         To="1"/>
+                        
+                    </Storyboard>
+                </BeginStoryboard>
+            </DataTrigger.EnterActions>
+            <DataTrigger.ExitActions>
+                <StopStoryboard BeginStoryboardName="fadeInStoryboard"/>
+                <BeginStoryboard x:Name="fadeOutStoryBoard">
+                    <Storyboard>
+                        <DoubleAnimation Duration="00:00:00"
+                                         Storyboard.TargetName="exclaimationMark"
+                                         Storyboard.TargetProperty="Opacity"
+                                         To="0.4"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </DataTrigger.ExitActions>
+        </DataTrigger>
+    </ControlTemplate.Triggers>
+</ControlTemplate>
+
+    
+	<Style TargetType="{x:Type local:RapidFindReplaceControl}">
+        <Setter Property="BodyHighlightAdornerBrush" Value="{StaticResource Keyoti_BodyHighlightAdornerBrush}"/>
+        <Setter Property="BodyIterativeHighlightAdornerBrush" Value="{StaticResource Keyoti_BodyIterativeHighlightAdornerBrush}"/>
+		<Setter Property="NoHitsBorderBrushColor" Value="#FFFB1515"/>
+		<Setter Property="WatermarkText" Value="Find..."/>
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FindButtonIcon" Value="{StaticResource Keyoti_MagnifyingGlassIconBrush}"/>
+        <Setter Property="OptionsButtonIcon" Value="{StaticResource Keyoti_OptionsIconBrush}"/>
+        <Setter Property="OptionsButtonCheckedIcon" Value="{StaticResource Keyoti_OptionsCheckedIconBrush}"/>
+        <Setter Property="IsReplaceOpen" Value="true"/>
+        <Setter Property="FocusManager.IsFocusScope" Value="True"/>
+        <Setter Property="KeyboardNavigation.TabNavigation" Value="Local"/>   
+		<Setter Property="KeyboardNavigation.IsTabStop" Value="false"/>
+        <Setter Property="Validation.ErrorTemplate" Value="{StaticResource Keyoti_QueryErrorTemplate}"/>
+	
+        <Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="{x:Type local:RapidFindReplaceControl}" >
+
+
+                    <Grid d:DesignHeight="56" d:DesignWidth="250" >
+						<VisualStateManager.VisualStateGroups>
+							<VisualStateGroup x:Name="MouseStates">
+								<VisualState x:Name="MouseOver">
+									<Storyboard>
+										<ColorAnimation Storyboard.TargetProperty="(TextBlock.Foreground).(Color)" Storyboard.TargetName="PART_EmptyText" Duration="0:0:0.1" To="Black"/>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="MouseOut">
+									<Storyboard>
+										<ColorAnimation Storyboard.TargetProperty="(TextBlock.Foreground).(Color)" Storyboard.TargetName="PART_EmptyText" Duration="0:0:0.1" To="Gray"/>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="QueryStates">
+								<VisualState x:Name="Query">
+									<Storyboard>
+										<StringAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="PART_EmptyText" Duration="0" >
+											<DiscreteStringKeyFrame Value="" KeyTime="0"/>
+										</StringAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="NoQuery"/>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="FocusStates">
+								<VisualState x:Name="Blur_Query"/>
+								<VisualState x:Name="Blur_NoQuery">
+									<Storyboard>
+										<DoubleAnimation Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="PART_EmptyText" Duration="0:0:0.2"  To="1"/>
+									</Storyboard>
+								</VisualState>
+								<VisualState x:Name="Focus">
+									<Storyboard>
+										<StringAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="PART_EmptyText" Duration="0" >
+											<DiscreteStringKeyFrame Value="" KeyTime="0"/>
+										</StringAnimationUsingKeyFrames>
+									</Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+							<VisualStateGroup x:Name="HitStates">
+								<VisualState x:Name="NoHits">
+									<Storyboard>
+										<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush).(SolidColorBrush.Color)" Storyboard.TargetName="mainBorder" Duration="0:0:0.25">
+											<EasingColorKeyFrame KeyTime="0" Value="Transparent"/>
+											<EasingColorKeyFrame KeyTime="0:0:.25" Value="#FFFB1515" x:Name="PART_EasingColorKeyFrameEnd" />
+                                            
+										</ColorAnimationUsingKeyFrames>
+               
+
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.Background)" Storyboard.TargetName="PART_FindButton"  Duration="0:0:0">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource Keyoti_CrossIconBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+
+                                        
+
+                                    </Storyboard>
+								</VisualState>
+
+								<VisualState x:Name="Hits">
+									<Storyboard>
+										<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Control.Background)" Storyboard.TargetName="PART_FindButton"  Duration="0:0:0">
+                                            <DiscreteObjectKeyFrame KeyTime="0:0:0" Value="{StaticResource Keyoti_CrossIconBrush}"/>
+										</ObjectAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(IsEnabled)" Storyboard.TargetName="PART_NextMatchButton" Duration="0">
+                                            <DiscreteBooleanKeyFrame Value="True" KeyTime="0"/>
+                                        </BooleanAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(IsEnabled)" Storyboard.TargetName="PART_PreviousMatchButton" Duration="0">
+                                            <DiscreteBooleanKeyFrame Value="True" KeyTime="0"/>
+                                        </BooleanAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(IsEnabled)" Storyboard.TargetName="PART_ReplaceButton" Duration="0">
+                                            <DiscreteBooleanKeyFrame Value="True" KeyTime="0"/>
+                                        </BooleanAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(IsEnabled)" Storyboard.TargetName="PART_ReplaceAllButton" Duration="0">
+                                            <DiscreteBooleanKeyFrame Value="True" KeyTime="0"/>
+                                        </BooleanAnimationUsingKeyFrames>
+                                    </Storyboard>
+								</VisualState>
+								<VisualState x:Name="NoFind">
+									<Storyboard>
+										<ColorAnimation Storyboard.TargetProperty="(TextBlock.Foreground).(Color)" Storyboard.TargetName="PART_EmptyText" Duration="0:0:0.1" To="Gray"/>
+                                        <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(IsEnabled)" Storyboard.TargetName="PART_ReplaceButton" Duration="0">
+                                            <DiscreteBooleanKeyFrame Value="False" KeyTime="0"/>
+                                        </BooleanAnimationUsingKeyFrames>
+                                        <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(IsEnabled)" Storyboard.TargetName="PART_ReplaceAllButton" Duration="0">
+                                            <DiscreteBooleanKeyFrame Value="False" KeyTime="0"/>
+                                        </BooleanAnimationUsingKeyFrames>
+                                    </Storyboard>
+								</VisualState>
+							</VisualStateGroup>
+						</VisualStateManager.VisualStateGroups>
+
+
+
+
+
+                        <Grid  Background="{StaticResource Keyoti_BackgroundBrush}" >
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition Width="10"/>
+											<ColumnDefinition Width="*"/>
+											<ColumnDefinition Width="24"/>
+											<ColumnDefinition Width="22"/>
+										</Grid.ColumnDefinitions>
+										<Grid.RowDefinitions>
+											<RowDefinition Height="28"/>
+											<RowDefinition Height="Auto"/>
+										</Grid.RowDefinitions>
+
+                            <ToggleButton TabIndex="9" IsChecked="{Binding IsReplaceOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="0" Background="{StaticResource Keyoti_ExpandIconBrush}" Margin="0 0 0 0" >
+											<ToggleButton.Template>
+												<ControlTemplate TargetType="{x:Type ToggleButton}">
+                                        <Border x:Name="Border"  BorderBrush="Transparent" BorderThickness="0" Background="{StaticResource Keyoti_BackgroundBrush}">
+
+														<ContentPresenter>
+															<ContentPresenter.Content>
+																<Rectangle x:Name="iconRectangle" Fill="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+															</ContentPresenter.Content>
+														</ContentPresenter>
+													</Border>
+													<ControlTemplate.Triggers>
+
+										
+
+														<MultiTrigger>
+															<MultiTrigger.Conditions>
+																<Condition Property="IsMouseOver" Value="true" />
+																<Condition Property="IsChecked" Value="false" />
+															</MultiTrigger.Conditions>
+
+                                                <Setter TargetName="iconRectangle" Property="Fill" Value="{StaticResource Keyoti_ExpandMouseOverIconBrush}" />
+
+														</MultiTrigger>
+
+														<MultiTrigger>
+															<MultiTrigger.Conditions>
+																<Condition Property="IsMouseOver" Value="false" />
+																<Condition Property="IsChecked" Value="true" />
+															</MultiTrigger.Conditions>
+
+                                                <Setter TargetName="iconRectangle" Property="Fill" Value="{StaticResource Keyoti_ContractIconBrush}" />
+
+														</MultiTrigger>
+
+														<MultiTrigger>
+															<MultiTrigger.Conditions>
+																<Condition Property="IsMouseOver" Value="true" />
+																<Condition Property="IsChecked" Value="true" />
+															</MultiTrigger.Conditions>
+
+                                                <Setter TargetName="iconRectangle" Property="Fill" Value="{StaticResource Keyoti_ContractMouseOverIconBrush}" />
+
+														</MultiTrigger>
+
+													</ControlTemplate.Triggers>
+												</ControlTemplate>
+											</ToggleButton.Template>	
+										</ToggleButton>
+
+										<Border Grid.Column="1" x:Name="mainBorder" BorderBrush="Transparent" BorderThickness="1"  >
+
+
+
+                                <Grid Width="{Binding ActualWidth, ElementName=mainBorder}" Height="{Binding ActualHeight, ElementName=mainBorder}" Background="{StaticResource Keyoti_FindBoxBackgroundBrush}">
+												<Grid.ColumnDefinitions>
+													<ColumnDefinition Width="*"/>
+													<ColumnDefinition Width="3.778"/>
+													<ColumnDefinition Width="26.222"/>
+													<ColumnDefinition Width="16"/>
+												</Grid.ColumnDefinitions>
+                			
+												<TextBox Grid.Column="0"  Margin="0,0,-4,0" x:Name="PART_FindTextBox" 
+													BorderThickness="0" 
+													MinWidth="50"  local:RapidFindReplaceControl.IsFindable="false" 
+													FontSize="10pt" TabIndex="1"
+													VerticalContentAlignment="Top" Grid.ColumnSpan="4"
+													Padding="3 3 44 3"
+                                                    
+                                     >
+                                        <TextBox.Text>
+                                            <Binding Path="Query" Mode="TwoWay" RelativeSource="{RelativeSource TemplatedParent}" UpdateSourceTrigger="PropertyChanged">
+                                              
+                                            </Binding>
+                                            
+                                        </TextBox.Text>
+                                            <TextBox.Background>
+                					
+														<VisualBrush Stretch="None" AlignmentX="Left">
+										
+															<VisualBrush.Transform>
+																<TranslateTransform X="5" Y="-.6"/>
+															</VisualBrush.Transform>
+															<VisualBrush.Visual>
+																<TextBlock  x:Name="PART_EmptyText" Grid.Column="0" Text="{TemplateBinding WatermarkText}" Foreground="Gray" FontSize="{Binding FontSize, ElementName=PART_FindTextBox, Mode=OneWay}" Opacity="0" Focusable="False"/>
+															</VisualBrush.Visual>
+														</VisualBrush>
+
+													</TextBox.Background>	
+												</TextBox>
+                            
+												<local:PinnedPopup  x:Name="PART_OptionsPopup" AllowsTransparency="true" StaysOpen="false"
+													PlacementTarget="{Binding ElementName=mainBorder}" Placement="Custom"
+                                                   
+													IsOpen="{Binding IsOptionsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" Grid.ColumnSpan="2" Margin="0,0,3.778,0" >
+
+                                        <Grid  Background="{StaticResource Keyoti_BackgroundBrush}" Margin="0 0 8 8" x:Name="popUpGrid">
+														<Grid.RowDefinitions>
+															<RowDefinition />
+															<RowDefinition />
+															<RowDefinition />
+															<RowDefinition Height="*"/>
+														</Grid.RowDefinitions>
+
+
+														<Rectangle Grid.RowSpan="4" Grid.ColumnSpan="1" Fill="{Binding Background, ElementName=popUpGrid}" Margin="0 0 0 0" Stroke="#FFAAAAAA">
+															<Rectangle.Effect>
+																<DropShadowEffect Color="#FF000000" Opacity="0.5" RenderingBias="Performance"  />
+															</Rectangle.Effect>
+														</Rectangle>
+
+														<ListView Grid.Row="0"  x:Name="PART_HistoryList" Background="Transparent" BorderThickness="0" Padding="0" Margin="0" 
+															SelectedItem="{Binding Query, Mode=OneWayToSource, RelativeSource={RelativeSource TemplatedParent}, UpdateSourceTrigger=PropertyChanged}"
+															ItemsSource="{TemplateBinding QueryHistory}"
+                                              
+                                              >
+                                        
+                                        
+                                        
+															<ListView.Resources>
+																<Style TargetType="{x:Type GridViewColumnHeader}">
+																	<Setter Property="Visibility" Value="Collapsed" />
+																</Style>
+															</ListView.Resources>
+															<ListView.ItemContainerStyle>
+																<StaticResource ResourceKey="Keyoti_ListViewItemContainerStyle1"/>
+															</ListView.ItemContainerStyle>
+															<ListView.View>
+																<GridView   >
+																	<GridViewColumn Width="200"/>
+
+																</GridView>
+
+															</ListView.View>
+
+
+														</ListView>
+
+												
+														<Rectangle Grid.Row="1" HorizontalAlignment="Stretch" Fill="#FFAAAAAA" Height=".4"/>
+														<Label Grid.Row="2" Foreground="#FFAAAAAA" Content="Find options"/>
+														<ListView Grid.Row="3" x:Name="PART_OptionsList" Background="Transparent" BorderThickness="0" Padding="0" Margin="0 0 0 8" 
+															ItemsSource="{Binding AvailableFindOptions, RelativeSource={RelativeSource TemplatedParent}}" >
+
+															<ListView.Resources>
+																<Style TargetType="{x:Type GridViewColumnHeader}">
+																	<Setter Property="Visibility" Value="Collapsed" />
+																</Style>
+																<Style TargetType="{x:Type CheckBox}">
+
+																	<Setter Property="HorizontalAlignment" Value="Right"/>
+																</Style>
+															</ListView.Resources>
+															<ListView.ItemContainerStyle>
+																<StaticResource ResourceKey="Keyoti_ListViewItemContainerStyle1"/>
+                                                                
+															</ListView.ItemContainerStyle>
+															<ListView.View>
+																<GridView    >
+                                                        <GridViewColumn DisplayMemberBinding="{Binding OptionName, Converter={StaticResource Keyoti_CamelCaseConverter}, Mode=OneWay}" Width="180"/>
+																	<GridViewColumn Width="60">
+																		<GridViewColumn.CellTemplate>
+																			<DataTemplate>
+
+                                                                    <CheckBox AutomationProperties.AutomationId="{Binding OptionName}"  IsHitTestVisible="False" HorizontalAlignment="Right" Tag="{Binding OptionName}" IsChecked="{Binding Value}" Padding="0" Margin="0"/>
+
+																			</DataTemplate>
+
+																		</GridViewColumn.CellTemplate>
+
+																	</GridViewColumn>
+																</GridView>
+
+															</ListView.View>
+
+
+														</ListView>
+
+													</Grid>
+													
+                    
+												</local:PinnedPopup>
+
+
+												<Button Grid.Column="1" x:Name="PART_FindButton"  Width="{Binding ActualHeight, ElementName=PART_FindTextBox}" Height="{Binding ActualHeight, ElementName=PART_FindTextBox}" 
+													Background="{Binding FindButtonIcon, RelativeSource={RelativeSource TemplatedParent}}" Grid.ColumnSpan="2"
+													 TabIndex="3"
+                                            >
+													<Button.Template>
+														<ControlTemplate TargetType="{x:Type Button}">
+															<Border x:Name="Border"  BorderBrush="Transparent">
+                                            
+																<ContentPresenter>
+																	<ContentPresenter.Content>
+																		<Rectangle Fill="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+																	</ContentPresenter.Content>
+																</ContentPresenter>
+															</Border>
+															<ControlTemplate.Triggers>
+                                          
+																<Trigger Property="IsMouseOver" Value="true">
+                                                        <Setter TargetName="Border" Property="Background" Value="{StaticResource Keyoti_FindButtonBackgroundMouseOverBrush}" />
+																</Trigger>
+																<Trigger Property="IsPressed" Value="true">
+																	<Setter Property="Background" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+																</Trigger>
+                                            
+															</ControlTemplate.Triggers>
+														</ControlTemplate>
+													</Button.Template>
+												</Button>
+
+												<ToggleButton IsChecked="{Binding IsOptionsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="3" x:Name="PART_OptionsButton" Width="16"  Height="{Binding ActualHeight, ElementName=PART_FindTextBox}" 
+													Background="{Binding OptionsButtonIcon, RelativeSource={RelativeSource TemplatedParent}}"
+													 TabIndex="4"
+                                            >
+													<ToggleButton.Template>
+														<ControlTemplate TargetType="{x:Type ToggleButton}">
+															<Border x:Name="Border"  BorderBrush="Transparent" BorderThickness=".75,0,0,0">
+                                            
+																<ContentPresenter>
+																	<ContentPresenter.Content>
+																		<Rectangle x:Name="rect" Fill="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+																	</ContentPresenter.Content>
+																</ContentPresenter>
+															</Border>
+															<ControlTemplate.Triggers>
+
+																<MultiTrigger>
+																	<MultiTrigger.Conditions>
+																		<Condition Property="IsMouseOver" Value="true" />
+																		<Condition Property="IsChecked" Value="false" />
+																	</MultiTrigger.Conditions>
+
+                                                        <Setter TargetName="Border" Property="Background" Value="{StaticResource Keyoti_OptionsButtonBackgroundMouseOverBrush}" />
+																	<Setter TargetName="Border" Property="BorderThickness" Value=".75,0,0,0" />
+																	<Setter TargetName="Border" Property="BorderBrush" Value="#FF406CB9" />
+
+																</MultiTrigger>
+
+																<Trigger Property="IsChecked" Value="true">
+																	<Setter TargetName="Border" Property="Background" Value="#FF406CB9" />
+                                                        <Setter TargetName="rect" Property="Fill" Value="{StaticResource Keyoti_OptionsCheckedIconBrush}" />
+                                                
+																</Trigger>
+																<Trigger Property="IsPressed" Value="true">
+																	<Setter Property="Background" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+																</Trigger>
+                                            
+
+															</ControlTemplate.Triggers>
+														</ControlTemplate>
+													</ToggleButton.Template>
+												</ToggleButton>
+
+
+								
+
+
+											</Grid>
+
+										</Border>
+                            <Button Grid.Column="2" Background="{StaticResource Keyoti_NextMatchIconBrush}" Margin="4 0 0 0" x:Name="PART_NextMatchButton"
+                                 TabIndex="5"   IsEnabled="False" >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="Border"  BorderBrush="Transparent" BorderThickness="1" Background="{StaticResource Keyoti_BackgroundBrush}">
+
+                                            <ContentPresenter>
+                                                <ContentPresenter.Content>
+                                                    <Rectangle Fill="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+                                                </ContentPresenter.Content>
+                                            </ContentPresenter>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+
+                                            <Trigger Property="IsMouseOver" Value="true">
+                                                <Setter TargetName="Border" Property="Background" Value="{StaticResource Keyoti_NextMatchIconMouseOverBrush}" />
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="true">
+                                                <Setter Property="Background" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Opacity"  Value=".5"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+
+                            </Button>
+                            <Button Grid.Column="3" Background="{StaticResource Keyoti_PreviousMatchIconBrush}" Margin="2 0 0 0" x:Name="PART_PreviousMatchButton"
+							TabIndex="6"  IsEnabled="False" 
+							>
+											<Button.Template>
+												<ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="Border"  BorderBrush="Transparent" BorderThickness="1" Background="{StaticResource Keyoti_BackgroundBrush}">
+
+														<ContentPresenter>
+															<ContentPresenter.Content>
+																<Rectangle Fill="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}"/>
+															</ContentPresenter.Content>
+														</ContentPresenter>
+													</Border>
+													<ControlTemplate.Triggers>
+
+														<Trigger Property="IsMouseOver" Value="true">
+                                                <Setter TargetName="Border" Property="Background" Value="{StaticResource Keyoti_NextMatchIconMouseOverBrush}" />
+														</Trigger>
+														<Trigger Property="IsPressed" Value="true">
+															<Setter Property="Background" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+														</Trigger>
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Opacity"  Value=".5"/>
+                                            </Trigger>
+
+                                        </ControlTemplate.Triggers>
+												</ControlTemplate>
+											</Button.Template>	
+										</Button>
+										
+                        
+										<Border Grid.Column="1" Grid.Row="1" x:Name="replaceBorder" BorderBrush="Transparent" BorderThickness="1" 
+											Visibility="{TemplateBinding IsReplaceOpen, Converter={StaticResource Keyoti_BooleanCollapsedVisibilityConverter}}"
+											Height="28"
+                                >						
+											<TextBox x:Name="PART_ReplaceTextBox" BorderThickness="0" Padding="3" Margin="0" MinWidth="50"  
+												local:RapidFindReplaceControl.IsFindable="false" 
+												FontSize="10pt"  TabIndex="2"
+												Width="{Binding ActualWidth, ElementName=replaceBorder}" Height="{Binding ActualHeight, ElementName=replaceBorder}"
+												Background="{StaticResource Keyoti_FindBoxBackgroundBrush}"
+								
+						 	/>
+					
+										</Border>
+
+
+                            <Button Grid.Column="2" Grid.Row="1" Background="{StaticResource Keyoti_ReplaceIconBrush}" Margin="4 0 0 0" Padding="0" Width="22" Height="28" x:Name="PART_ReplaceButton"
+						Visibility="{TemplateBinding IsReplaceOpen, Converter={StaticResource Keyoti_BooleanCollapsedVisibilityConverter}}"
+                        
+                                       TabIndex="7"                                
+                                    >
+                                <Button.IsEnabled>
+                                    <MultiBinding Converter="{StaticResource Keyoti_BooleanAndConverter}">
+                                        <Binding Path="CurrentMatch.IsReplaceable" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                        <Binding Path="IsEnabled"/>
+                                       
+                                    </MultiBinding>
+                                </Button.IsEnabled>
+                                
+							<Button.Template>
+								<ControlTemplate TargetType="{x:Type Button}">
+									<Border x:Name="Border"  BorderBrush="Transparent" BorderThickness="1" Background="{StaticResource Keyoti_BackgroundBrush}">
+
+										<ContentPresenter>
+											<ContentPresenter.Content>
+                                                    
+                                                        <Rectangle Fill="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill" />
+                                                  
+                                                </ContentPresenter.Content>
+										</ContentPresenter>
+									</Border>
+									<ControlTemplate.Triggers>
+
+								
+
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsMouseOver" Value="true" />
+                                                    <Condition Property="IsEnabled" Value="true" />
+                                                </MultiTrigger.Conditions>
+
+                                                <Setter TargetName="Border" Property="Background" Value="{StaticResource Keyoti_NextMatchIconMouseOverBrush}" />
+
+                                            </MultiTrigger>
+
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Opacity"  Value=".5"/>
+                                            </Trigger>
+                                        
+                                            <Trigger Property="IsPressed" Value="true">
+											    <Setter Property="Background" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+										    </Trigger>
+                                           
+                                        </ControlTemplate.Triggers>
+								</ControlTemplate>
+							</Button.Template>
+							<Path Data="" Fill="#FF4B4B4B" Stretch="Fill" Stroke="#FF3C3C3C"/>
+
+						</Button>
+                            <Button Grid.Column="3" Grid.Row="1" Background="{StaticResource Keyoti_ReplaceAllIconBrush}" Margin="2 0 0 0" Padding="0" Width="22" Height="28" x:Name="PART_ReplaceAllButton"
+						Visibility="{TemplateBinding IsReplaceOpen, Converter={StaticResource Keyoti_BooleanCollapsedVisibilityConverter}}"
+                            TabIndex="8"                               
+                                    >
+                                <Button.IsEnabled>
+                                    <MultiBinding Converter="{StaticResource Keyoti_BooleanAndConverter}">
+                                        <Binding Path="CurrentMatch.IsReplaceable" RelativeSource="{RelativeSource TemplatedParent}"/>
+                                        <Binding Path="IsEnabled"/>
+                                    </MultiBinding>
+                                </Button.IsEnabled>
+                                <Button.Template>
+								<ControlTemplate TargetType="{x:Type Button}">
+                                        <Border x:Name="Border"  BorderBrush="Transparent" BorderThickness="1" Background="{StaticResource Keyoti_BackgroundBrush}">
+
+										<ContentPresenter>
+											<ContentPresenter.Content>
+												<Rectangle Fill="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Fill"/>
+											</ContentPresenter.Content>
+										</ContentPresenter>
+									</Border>
+									<ControlTemplate.Triggers>
+
+                                            <MultiTrigger>
+                                                <MultiTrigger.Conditions>
+                                                    <Condition Property="IsMouseOver" Value="true" />
+                                                    <Condition Property="IsEnabled" Value="true" />
+                                                </MultiTrigger.Conditions>
+
+                                                <Setter TargetName="Border" Property="Background" Value="{StaticResource Keyoti_NextMatchIconMouseOverBrush}" />
+
+                                            </MultiTrigger>
+
+                                            <Trigger Property="IsEnabled" Value="false">
+                                                <Setter Property="Opacity"  Value=".5"/>
+                                            </Trigger>
+                                            <Trigger Property="IsPressed" Value="true">
+													<Setter Property="Background" TargetName="Border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+												</Trigger>
+                                            
+									</ControlTemplate.Triggers>
+								</ControlTemplate>
+							</Button.Template>
+							<Path Data="" Fill="#FF4B4B4B" Stretch="Fill" Stroke="#FF3C3C3C"/>
+
+						</Button>
+                    
+					
+									</Grid>
+                    
+								</Grid>
+                    
+                    
+                    
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+
+
+
+</ResourceDictionary>

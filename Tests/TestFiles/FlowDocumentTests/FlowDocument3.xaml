@@ -1,0 +1,10 @@
+﻿<FlowDocument ColumnWidth="400" IsOptimalParagraphEnabled="True" IsHyphenationEnabled="True"  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <Section FontSize="12">
+        <Paragraph>
+            <Run>a b </Run>
+            <Run>c</Run>
+            <!-- <Run>This is some rich text </Run>
+            <Run>box content</Run>-->
+        </Paragraph>    
+    </Section>
+</FlowDocument>

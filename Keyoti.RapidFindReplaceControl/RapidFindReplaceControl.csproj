@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64CE1DBE-B789-434A-A16C-544D350E158D}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Keyoti.RapidFindReplace.WPF</RootNamespace>
+    <AssemblyName>Keyoti4.RapidFindReplace.WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\Keyoti4.RapidFindReplace.WPF.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Keyoti4.RapidFindReplace.WPF.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\Dictionary.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\OfficeStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActionCommand.cs" />
+    <Compile Include="Converters\BooleanCollapsedVisibilityConverter.cs" />
+    <Compile Include="Converters\BooleanOrConverter.cs" />
+    <Compile Include="Converters\BooleanAndConverter.cs" />
+    <Compile Include="Converters\Converters.cs" />
+    <Compile Include="Converters\FindReplaceTabIndexConverter.cs" />
+    <Compile Include="Converters\QueryConverter.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\FlowDocumentScrollViewerHighlightAdorner.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\FlowDocumentScrollViewerHighlightHandler.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\RunCollectionHighlightHandler.cs" />
+    <Compile Include="FindHandlers\RunCollectionContainer.cs" />
+    <Compile Include="FindHandlers\RunReaders\FlowDocumentScrollViewerRunReader.cs" />
+    <Compile Include="FindHandlers\RunReaders\RunCollectionRunReader.cs" />
+    <Compile Include="FocusMonitor.cs" />
+    <Compile Include="RapidFindReplacePopupControl.cs" />
+    <Compile Include="Converters\CamelCaseConverter.cs" />
+    <Compile Include="FindHandlers\FindHandlerRegistry.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\FlowDocumentPageViewerHighlightHandler.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\Highlight.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\HighlightAdorner.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\HighlightHandler.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\HighlightHandlers.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\RichTextBoxHelper.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\RichTextBoxHighlightAdorner.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\RichTextBoxHighlightHandler.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\ScrollBarHighlightAdorner.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\ScrollBarHighlightHandler.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\TextBoxHighlightAdorner.cs" />
+    <Compile Include="FindHandlers\HighlightHandlers\TextBoxHighlightHandler.cs" />
+    <Compile Include="FindHandlers\RunReaders\DocumentViewerBaseRunReader.cs" />
+    <Compile Include="FindHandlers\RunReaders\FlowDocumentRunReader.cs" />
+    <Compile Include="FindHandlers\RunReaders\IContentHostRunReader.cs" />
+    <Compile Include="FindHandlers\RunReaders\IRunReader.cs" />
+    <Compile Include="FindHandlers\RunReaders\RichTextBoxRunReader.cs" />
+    <Compile Include="FindHandlers\RunReaders\TextBoxRunReader.cs" />
+    <Compile Include="RapidFindReplaceControl.cs" />
+    <Compile Include="RapidFindReplaceControlViewModel.cs" />
+    <Compile Include="ObservableBackwardsRingBuffer.cs" />
+    <Compile Include="OptionPropertyAttribute.cs" />
+    <Compile Include="OptionsViewModel.cs" />
+    <Compile Include="PinnedPopup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Query.cs" />
+    <Compile Include="RunQueue.cs" />
+    <Compile Include="TextMatching\AbstractIgnoreHandler.cs" />
+    <Compile Include="TextMatching\AbstractTextMatcher.cs" />
+    <Compile Include="TextMatching\Hit.cs" />
+    <Compile Include="TextMatching\IgnoreCharacterClassHandler.cs" />
+    <Compile Include="TextMatching\IIgnoreCharacterHandler.cs" />
+    <Compile Include="TextMatching\IMatchFilter.cs" />
+    <Compile Include="TextMatching\ITextMatcher.cs" />
+    <Compile Include="TextMatching\RegularExpressionTextMatcher.cs" />
+    <Compile Include="TextMatching\StandardTextMatcher.cs" />
+    <Compile Include="TextMatching\TextMatchers.cs" />
+    <Compile Include="TextMatching\WildcardTextMatcher.cs" />
+    <Compile Include="TextMatching\WordPartFilter.cs" />
+    <Compile Include="Utility.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Behaviors\" />
+    <Folder Include="Images\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Keyoti.RapidFindReplace.WPF.RapidFindReplaceControl.icon.ReallyLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Keyoti.RapidFindReplace.WPF.RapidFindReplacePopupControl.icon.ReallyLarge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Keyoti.RapidFindReplace.WPF.RapidFindReplaceControl.icon.Large.png" />
+    <EmbeddedResource Include="Keyoti.RapidFindReplace.WPF.RapidFindReplaceControl.icon.Medium.png" />
+    <EmbeddedResource Include="Keyoti.RapidFindReplace.WPF.RapidFindReplacePopupControl.icon.Large.png" />
+    <EmbeddedResource Include="Keyoti.RapidFindReplace.WPF.RapidFindReplacePopupControl.icon.Medium.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,502 @@
+﻿	/*
+		-- Colours --
+
+		blues:
+		#003366		v dark
+		#006699		dark
+		#95A9D3		darker border lines
+		#B0C1E0		v slight border lines
+		#C1CDE5		main box back ground
+		#CCD7EC		lighter
+
+		green:
+		#C2E6C7
+
+		yellow:
+		#E6E6C2
+			
+	*/
+	 
+b{ font-weight:600;}
+
+	hr{
+		
+		color: #B0C1E0;
+
+	}
+	
+	img{
+	
+	border: 1px  B0C1E0 solid;
+}
+
+	.blueGrad{
+background: #b0c1e0; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IwYzFlMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iIzIwN2NjYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNjY2Q3ZWMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #b0c1e0 0%, #2989d8 50%, #207cca 51%, #ccd7ec 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#b0c1e0), color-stop(50%,#2989d8), color-stop(51%,#207cca), color-stop(100%,#ccd7ec)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #b0c1e0 0%,#2989d8 50%,#207cca 51%,#ccd7ec 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #b0c1e0 0%,#2989d8 50%,#207cca 51%,#ccd7ec 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #b0c1e0 0%,#2989d8 50%,#207cca 51%,#ccd7ec 100%); /* IE10+ */
+background: linear-gradient(top,  #b0c1e0 0%,#2989d8 50%,#207cca 51%,#ccd7ec 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b0c1e0', endColorstr='#ccd7ec',GradientType=0 ); /* IE6-8 */
+
+	}
+	
+		
+
+	a.expanderLink:link, a.expanderLink:visited,a.expanderLink:active {
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 10pt;
+		text-decoration: none;
+		color: #003366;
+		
+	}
+	a.expanderLink:hover{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 10pt;
+		text-decoration: none;
+		color: #006699;
+	}
+	.expanderItem{
+		padding-bottom: 8px;
+
+	}
+
+	.expanderContent{
+		display: none; 
+		text-align:center;
+		border-left: 1px solid #B0C1E0;
+		border-right: 1px solid #B0C1E0;border-bottom: 1px solid #B0C1E0; 
+		padding: 0px; margin-bottom:20px;
+		}
+
+	.expanderInnerText{
+
+		text-align: left;
+
+	}
+ 
+
+	p.expanderInnerText{
+		margin-top: 0px;
+		padding: 6px;
+		text-align: left;
+	}
+
+
+
+	body{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 10pt;
+
+	
+	background-image:url(lightblue-back-grad.gif);
+	background-repeat:repeat-x;
+background-color: #D2DDF0;
+	}
+
+	p, li, ul, td{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 10pt;
+	}
+	
+	li.examplelistitem
+	{
+	    padding:5px;
+	}
+
+	td.prodHighLight, a.prodHighLight{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		font-weight: bold;
+		color: #006699;
+		text-align: center;
+
+	}
+
+td.prodHighLight2{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		font-weight: normal;
+		color: #000000;
+		text-align: left;
+	}
+
+	.osHead{
+		color: #94ABD4;
+	}
+
+
+	input, textarea, select{
+		font-family: Segoe UI, sans-serif, helvetica;
+		
+
+		font-size:8pt; 
+		/*border:1px solid #95A9D3;*/
+
+		scrollbar-base-color: #006699;
+		scrollbar-track-color: #c0cde5;
+		scrollbar-face-color: #c0cde5;
+		scrollbar-highlight-color: #dbe3f1;
+		scrollbar-3dlight-color: #C0CDE5;
+		scrollbar-darkshadow-color: #000000;
+		scrollbar-shadow-color: #003366;
+		scrollbar-arrow-color: #003366;
+
+		/*background-color:#EAEEF7;*/
+
+	}
+
+	input.radio{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 10pt;
+		border:none;
+	}
+
+
+
+
+	.sideBar{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		text-decoration:none;
+		color: #006699;
+	}
+
+	.productDescription{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		text-decoration:none;
+		padding-left: 20px;
+		color: #000000;
+	}
+
+
+
+	.sideBar a:link, .sideBar a:visited{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		text-decoration:none;
+		color: #003366;
+	}
+
+	.sideBar a:hover{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		text-decoration: underline;
+		color: #006699;
+	}
+
+
+	h2{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 17pt;
+		font-weight: normal;
+		color: #003366;
+		margin-top:40px;
+	}
+	h5{margin-top:30px;
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 10.8pt;
+		font-weight: normal;
+		color: #003366;
+	}
+	h4{margin-top:30px;
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 13pt;
+		font-weight: normal;
+		color: #003366;
+	}
+	h3{margin-top:40px;
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 15pt;
+		font-weight: normal;
+		color: #006699;
+	}
+
+
+	.pageTitle{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 18pt;
+		color: #006699;
+	}
+
+	.pageTitleVersion{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 16pt;
+		font-weight: normal;
+		color: #006699;
+	}
+
+	a:link, a:visited {
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 10pt;
+		text-decoration:underline;
+		color: #003366;
+	}
+
+	a:hover{
+		font-family: Segoe UI, sans-serif, helvetica;
+		color: #006699;
+	}
+
+
+	a.thumbnail:link, 	a.thumbnail:visited,	a.thumbnail:hover{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 7pt;
+		text-decoration:none;
+		color: #006699;
+	}
+
+	td.topLinks{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		text-decoration: none;
+		color: #000000;
+
+	}
+
+	table.topLinks{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		text-decoration: none;
+		color: #000000;
+		border: none;
+	}
+
+	a.topLinks:link, a.topLinks:visited, a.topLinks:hover{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		text-decoration: none;
+		color: #006699;
+	}
+
+	a.topLinks:hover{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		text-decoration: underline;
+		color: #003366;
+	}
+
+	.question{			font-weight: bold;}
+	.answer{			}
+
+
+	.copyrightMessage{
+		text-align: center;
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 8pt;
+		color: #006699;
+	}
+
+	.licenseInfo{
+		border: 1px solid #95A9D3;
+		padding: 5px;
+		padding-top: 0px;
+	}
+
+	a.leftMenuItem:link, a.leftMenuItem:visited, a.leftMenuItem:active{
+			text-decoration:none;
+			font-size:8pt;
+			padding: 0px;
+			margin: 0px;
+	}
+
+
+
+	div.leftMenuItem{
+			border-bottom: 1px solid #B0C1E0; width:100px; height:20px; cursor: hand; padding:4px; padding-bottom: 10px;
+			font-size:8pt;
+	}
+
+	div.leftActiveMenuItem{
+			border-bottom: 1px solid #B0C1E0; width:100px; height:20px; padding:4px; padding-bottom: 10px;
+			font-size:8pt; font-weight:bold;
+			
+	}
+	div.leftLastMenuItem{
+			width:100px; height:20px; cursor: hand; padding:4px; padding-bottom: 10px;
+			font-size:8pt;
+	}
+	div.leftLastActiveMenuItem{
+			width:100px; height:20px;  padding:4px;padding-bottom: 10px;
+			font-size:8pt;font-weight:bold;
+	}
+
+
+	a.expanderLinks:link,a.expanderLink:visited{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 10pt;
+		text-decoration: none;
+		color: #003366;
+
+	}
+	a.expanderLink:hover{
+		font-family: Segoe UI, sans-serif, helvetica;
+		font-size: 10pt;
+		text-decoration: none;
+		color: #006699;
+	}
+	.expanderItem{
+		padding-bottom: 8px;
+		}
+
+	.expanderContent{
+		display: none; 
+		text-align:center;
+		border-left: 1px solid #B0C1E0;
+		border-right: 1px solid #B0C1E0;border-bottom: 1px solid #B0C1E0; 
+		padding: 0px; margin-bottom:20px;
+		}
+
+
+
+	a:link.productLink, a:visited.productLink, .productLink{
+				text-decoration: none;
+				padding: 4px;
+				width:390px;
+			}
+
+			a:link.productLinkHighlight, a:visited.productLinkHighlight, .productLinkHighlight{
+				text-decoration: none;
+				border:1px solid #B0C1E0;
+				padding: 3px;
+				background-color: #E6E6C2;
+				margin:0px;
+				width:390px;
+			}
+			
+			p.productLink{
+				margin:0px;
+			}
+
+
+			.dotnettab, .javatab{
+				font-size: 11pt;
+				font-weight: normal;
+				color: #006699;
+				background-color: #C5D1E9;
+				border-top: 1px solid #B0C1E0;
+				border-left: 1px solid #B0C1E0;
+				border-right: 1px solid #B0C1E0;
+				width: 150px;
+				padding: 5px;
+				cursor: hand;
+			}
+
+			.dotnettabactive, .javatabactive{
+				font-size: 11pt;
+				font-weight: normal;
+				color: #006699;
+				background-color: #CCD7EC;
+				border-top: 1px solid #95A9D3;
+				border-left: 1px solid #95A9D3;
+				border-right: 1px solid #B0C1E0;
+				width: 150px;
+				padding: 5px;
+				cursor: hand;
+			}
+
+			#dotnetfront, #javafront{
+				border-left: 1px solid #95A9D3;
+				border-right: 1px solid #B0C1E0;
+				border-bottom: 1px solid #95A9D3;
+				padding: 5px;
+				display: block;
+				background-color: #CCD7EC;
+				height: 420px;
+			}
+
+
+
+
+/* CoolMenus 4 - default styles - do not edit */
+.clCMEvent{position:absolute; width:99%; height:99%; clip:rect(0,100%,100%,0); left:0; top:0; visibility:visible}
+.clCMAbs{position:absolute; visibility:hidden; left:0; top:0}
+/* CoolMenus 4 - default styles - end */
+  
+/*Style for the background-bar*/
+.clBar{position:absolute; width:10; background-color:#C1CDE5; layer-background-color:#C1CDE5; visibility:hidden}
+
+/*Styles for level 0*/
+.clLevel0,.clLevel0over{position:absolute; padding:2px; font-family:Segoe UI,helvetica; font-size:8pt; font-weight:normal; }
+.clLevel0{background-color:#C1CDE5; layer-background-color:#C1CDE5; color:#006699;}
+.clLevel0over{background-color:#C1CDE5; layer-background-color:#C1CDE5; color:black; cursor:pointer; cursor:hand; }
+.clLevel0border{position:absolute; visibility:hidden; background-color:#C1CDE5; layer-background-color:#C1CDE5}
+
+/*Styles for level 1*/
+.clLevel1{position:absolute; padding: 4px; font-family:Segoe UI,helvetica; font-size:8pt; font-weight:normal;
+background-color:#CCD7EC; layer-background-color:#CCD7EC; color:#003366; padding:5px;
+}
+.clLevel1over{position:absolute; padding-top: 4px; font-family:Segoe UI,helvetica; font-size:8pt; font-weight:normal; 
+background-color:#C2E6C7; layer-background-color:#c2e6c7; color:#003366; cursor:pointer; cursor:hand;
+border-top:1px solid #95A9D3; 
+border-bottom:1px solid #95A9D3; 
+padding-left:5px;
+/*border-bottom:1px solid red;*/
+}
+
+
+
+/*.clLevel1border{position:absolute; visibility:hidden; background-color:#006699; layer-background-color:#006699}*/
+.clLevel1border{position:absolute; visibility:hidden; background-color:#C1CDE5; layer-background-color:#C1CDE5; 
+border-left: 1px solid #95A9D3; border-bottom: 1px solid #95A9D3; border-right: 1px solid #95A9D3;
+}
+
+/*Styles for level 2*/
+
+.clLevel2{
+position:absolute; padding: 4px; font-family:Segoe UI,helvetica; font-size:8pt; font-weight:normal;
+background-color:#CCD7EC; layer-background-color:#C1CDE5; color:#003366;}
+.clLevel2over{
+position:absolute;  font-family:Segoe UI,helvetica; font-size:8pt; font-weight:normal;padding-top: 3px; 
+background-color:#C2E6C7; layer-background-color:#c2e6c7; color:#003366; cursor:pointer; cursor:hand;
+border-top:1px solid #95A9D3; 
+border-bottom:1px solid #95A9D3; 
+padding-left:4px;
+}
+.clLevel2border{position:absolute; visibility:hidden; background-color:#C1CDE5; layer-background-color:#C1CDE5; 
+border-left: 1px solid #95A9D3; border-bottom: 1px solid #95A9D3; border-right: 1px solid #95A9D3; border-top: 1px solid #95A9D3;}
+
+.codeExample{ border:1px solid #006699;background-color:white;
+overflow:auto;
+padding:5px;
+margin:4px;
+}
+.cs, .vb{display: block;}
+
+
+/*Header for code boxes */
+.codeExampleHeader{
+border-bottom:1px solid #CCD7EC;
+padding:5px; width: 100%;
+font-weight: bold;
+overflow:auto;
+}
+
+
+
+.stepExample{ border:1px solid #006699;background-color:#E3EAF5; padding:8px; margin:8px;}
+
+
+.langSelector{
+			border: 1px solid #B0C1E0;
+			background-color: #CCD7EC;
+			padding: 5px;
+			margin:0px;
+		}
+
+input.radio{
+	font-family: Segoe UI, sans-serif, helvetica;
+	font-size: 9pt;
+	background-color: #C1CDE5;
+}
+
+.note{
+	border: 1px solid #B0C1E0;
+	background-color: white;
+	padding: 5px;
+
+}

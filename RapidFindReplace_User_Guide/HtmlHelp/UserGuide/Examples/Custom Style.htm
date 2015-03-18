@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta name="robots" content="noindex" /><meta name="Keyoti_Search_Location_Category" content="RapidFindReplace WPF" /><meta name="Keyoti_Search_Content_Categories" content="Help / API" />
+        <link href="../sans-style.css"  rel='STYLESHEET' type='text/css' />
+        <title>RapidFindReplace WPF: Examples: Custom Style</title>
+    </head>
+<body>
+<div style="min-height:800px">
+<h2>Custom Style</h2>
+    <h3>Basic Style Properties</h3>
+    <p>
+        There are simple style properties in the controls (RapidFindReplaceControl and RapidFindReplacePopupControl) that may be set in the designer/xaml.  E.g.
+        
+    </p>
+    <ul>
+            <li>BodyHighlightAdornerBrush - the brush used to paint the highlight fill</li>
+            <li>BodyHighlightAdornerPen - the pen used to paint the highlight border</li>
+            <li>BodyIterativeHighlightAdornerBrush - the brush used to paint the highlight fill shown as the user iterates over matches</li>
+
+        </ul>
+    <p>This example shows a more complex scenario with gradients and triggers.</p>
+    
+<div class="codeExample"> 
+<span class="codeExampleHeader">XAML</span>
+
+<!-- Wrap code elements to specify the language -->
+<code class="xaml">
+<pre>
+
+    &lt;keyoti:RapidFindReplacePopupControl Name="findpop" &gt;
+        <b style="color:blue;">&lt;keyoti:RapidFindReplacePopupControl.BodyHighlightAdornerBrush&gt;                
+        	&lt;LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0" x:Name="bodyBrush"&gt;
+        		&lt;GradientStop Color="#FF135D76" Offset="1"/&gt;
+        		&lt;GradientStop/&gt;
+        		&lt;GradientStop Color="#41448FA6" Offset="0.896"/&gt;
+        	&lt;/LinearGradientBrush&gt;
+        &lt;/keyoti:RapidFindReplacePopupControl.BodyHighlightAdornerBrush&gt;
+            </b>
+    <b style="color:grey">
+        &lt;keyoti:RapidFindReplacePopupControl.BodyHighlightAdornerPen&gt;
+	        &lt;Pen Brush="Blue" Thickness=".1"&gt;&lt;/Pen&gt;
+        &lt;/keyoti:RapidFindReplacePopupControl.BodyHighlightAdornerPen&gt;
+        </b>
+    <b style="color:red">
+        &lt;keyoti:RapidFindReplacePopupControl.BodyIterativeHighlightAdornerBrush&gt;
+            &lt;LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0"  Opacity=".5"&gt;
+                &lt;GradientStop Color="#7666F514" Offset="0.004"/&gt;
+                &lt;GradientStop Color="#9982F532" Offset="1"/&gt;
+            &lt;/LinearGradientBrush&gt;
+        &lt;/keyoti:RapidFindReplacePopupControl.BodyIterativeHighlightAdornerBrush&gt;
+        </b>
+    <b style="color:green;">
+        &lt;keyoti:RapidFindReplacePopupControl.Triggers&gt;
+            &lt;EventTrigger RoutedEvent="keyoti:RapidFindReplacePopupControl.Loaded"&gt;
+                &lt;BeginStoryboard&gt;
+					&lt;Storyboard&gt;
+						&lt;DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="Opacity" Storyboard.TargetName="bodyBrush" RepeatBehavior="Forever"&gt;
+							&lt;EasingDoubleKeyFrame KeyTime="0" Value="0.4"/&gt;
+							&lt;EasingDoubleKeyFrame KeyTime="0:0:.4" Value="1"/&gt;
+							&lt;EasingDoubleKeyFrame KeyTime="0:0:1.2" Value=".4"/&gt;
+						&lt;/DoubleAnimationUsingKeyFrames&gt;
+					&lt;/Storyboard&gt;
+				&lt;/BeginStoryboard&gt;
+            &lt;/EventTrigger&gt;
+        &lt;/keyoti:RapidFindReplacePopupControl.Triggers&gt;
+            </b>
+     &lt;/keyoti:RapidFindReplacePopupControl&gt;
+
+</pre>
+</code>
+</div>
+
+
+    <h3>Extensive Styling (Template)</h3>
+    <p>
+        As with other WPF controls, RapidFindReplaceControl and RapidFindReplacePopupControl can be re-templated, to give them an entirely new look.
+        
+    </p>
+    <p>RapidFindReplaceControl is held by RapidFindReplacePopupControl, which is a Popup control with a close button.</p>
+
+    <p>To modify the template, it is easiest to use Blend, which can make a copy of the built in template.  On a Window holding the RapidFindReplacePopupControl, right click on the control in the designer and choose Edit Template-&gt;Edit a Copy</p>
+    <img src="Images/Blend1.png" alt="Blend edit" title="Blend edit template" />
+    <p>In the Create Style Resource dialog accept the defaults or change as desired.</p>
+    <p>This will add resources to the Window.Resources (or where you chose to define the template), that define only the RapidFindReplacePopupControl.</p>
+
+    <div class="codeExample"> 
+<span class="codeExampleHeader">XAML</span>
+
+<!-- Wrap code elements to specify the language -->
+<code class="xaml">
+<pre>
+    &lt;Window
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:keyoti="clr-namespace:Keyoti.RapidFindReplace.WPF;assembly=Keyoti4.RapidFindReplace.WPF"
+	xmlns:Options="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+	x:Class="SearchVisualTree.Retemplate"
+	x:Name="Window"
+	Title="Retemplate"
+	Width="640" Height="480"&gt;
+	&lt;Window.Resources&gt;
+
+            &lt;SolidColorBrush x:Key="Keyoti_BackgroundBrush" Options:Freeze="true" Color="#FFDDDDDD" /&gt;
+	
+
+            &lt;LinearGradientBrush StartPoint="0,0" EndPoint="1,1" x:Key="Keyoti_MagnifyingGlassStrokeBrush" Options:Freeze="true"&gt;
+	            &lt;GradientStop Color="#FF888888" Offset="0.0" /&gt;
+	            &lt;GradientStop Color="#FF000000" Offset="1.0" /&gt;
+            &lt;/LinearGradientBrush&gt;
+            ...
+            ...
+            ...
+	
+            &lt;Style <b>x:Key="RapidFindReplacePopupControlStyle1"</b> TargetType="{x:Type keyoti:RapidFindReplacePopupControl}"&gt;
+        
+		            &lt;Setter Property="Template"&gt;
+			            &lt;Setter.Value&gt;
+				
+				            &lt;ControlTemplate TargetType="{x:Type keyoti:RapidFindReplacePopupControl}"&gt;
+                    
+					            ...
+					            ...
+					            ...
+
+			            &lt;/ControlTemplate&gt;
+		            &lt;/Setter.Value&gt;
+	            &lt;/Setter&gt;
+            &lt;/Style&gt;
+
+	&lt;/Window.Resources&gt;
+
+	
+	&lt;Grid x:Name="LayoutRoot"&gt;
+
+		&lt;keyoti:RapidFindReplacePopupControl Margin="0,0,109.5,114" <b>Style="{DynamicResource RapidFindReplacePopupControlStyle1}"</b> /&gt;
+	&lt;/Grid&gt;
+&lt;/Window&gt;
+
+       
+</pre>
+</code>
+</div>
+
+    <p>The designer will also show the RapidFindReplaceControl inside of the RapidFindReplacePopupControl.  To edit the RapidFindReplaceControl template, use the same procedure as above.  Right click on the RapidFindReplaceControl -&gt; Edit Template -&gt; Edit a Copy</p>
+    <img src="Images/Blend2.png" alt="Blend edit 2" title="Blend edit template 2" />
+
+    <p>This will add more resources to the resource dictionary, this time for the actual RapidFindReplaceControl, and also make the elements of the control editable in the Blend designer.</p>
+
+      <img src="Images/Blend3.png" alt="Blend edit 3" title="Blend edit textbox part" />
+    <p>In the above screenshot the textbox part is being edited.</p><p>There are many excellent resources on the web about WPF template editing, for example <a href="http://msdn.microsoft.com/en-us/library/cc294908(v=expression.40).aspx">this MSDN article</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<Window x:Class="ViewModelUsage"
+     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:RapidFindReplace="clr-namespace:Keyoti.RapidFindReplace.WPF;assembly=Keyoti4.RapidFindReplace.WPF"
+        Title="ViewModelUsage" Height="317" Width="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <UserControl Height="32" VerticalAlignment="Top" HorizontalAlignment="Left" Width="155" >
+            <UserControl.DataContext>
+                <RapidFindReplace:RapidFindReplaceControlViewModel>
+                    <RapidFindReplace:RapidFindReplaceControlViewModel.BodyHighlightAdornerBrush>
+                        <SolidColorBrush Color="Yellow" Opacity=".3"/>
+                    </RapidFindReplace:RapidFindReplaceControlViewModel.BodyHighlightAdornerBrush>
+                    <RapidFindReplace:RapidFindReplaceControlViewModel.BodyHighlightAdornerPen>
+                        <Pen Brush="DarkSlateGray" Thickness=".9"/>
+                    </RapidFindReplace:RapidFindReplaceControlViewModel.BodyHighlightAdornerPen>
+                </RapidFindReplace:RapidFindReplaceControlViewModel>
+            </UserControl.DataContext>
+            <StackPanel Grid.Row="0"  Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBox RapidFindReplace:RapidFindReplaceControl.IsFindable="false" x:Name="_searchTextBox" Text="{Binding Query, Converter={x:Static RapidFindReplace:ConverterInstances.QueryConverter}, UpdateSourceTrigger=PropertyChanged}" MinWidth="100" Margin="2" KeyUp="_searchTextBox_KeyUp" >
+                </TextBox>
+                <Button x:Name="_searchButton" Height="{Binding ActualHeight, ElementName=_searchTextBox}" Content="Find" Command="{Binding FindTextCommand}" CommandParameter="{Binding ElementName=_searchTextBox, Path=Text}">
+                </Button>
+            </StackPanel>
+        </UserControl>
+        <RichTextBox Margin="0,37,0,2" ScrollViewer.VerticalScrollBarVisibility="Auto" RapidFindReplace:RapidFindReplaceControl.IsFindable="true">
+            <FlowDocument>
+                <Paragraph>On this Window the RapidFindReplace controls are not used at all - instead the control's ViewModel class (RapidFindReplaceControlViewModel) is used directly.</Paragraph>
+                <Paragraph>The TextBox is bound to the Query DependencyProperty in RapidFindReplaceControlViewModel, a KeyUp handler is used to trigger as-you-type finds and the Button fires the FindTextCommand in the view model.</Paragraph>
+                <Paragraph>This style of usage allows lower level access and the opportunity to build a Find/Replace UI from scratch.</Paragraph>
+                <Paragraph>The RapidFindReplaceControlViewModel declaration also sets some brush style properties by way of example.</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <CheckBox Content="Find as you type." IsChecked="True" x:Name="cb1" HorizontalAlignment="Left" Margin="155,10,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
+

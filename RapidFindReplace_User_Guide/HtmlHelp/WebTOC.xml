@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<HelpTOC>
+
+  <HelpTOCNode Id="547d99a5-262b-4293-b065-ee74e453f909" Title="RapidFindReplace Help" Url="UserGuide/UserGuide.html">
+    <HelpTOCNode Title="Terms &amp; Conditions" Url="UserGuide/Terms &amp; Conditions.htm" />
+    <HelpTOCNode Title="Introduction" Url="UserGuide/Introduction.htm" />
+    <HelpTOCNode Title="Release Notes" Url="UserGuide/Release Notes.htm" />
+    <HelpTOCNode Title="Quick Start" Url="UserGuide/Quick Start.htm" />
+    <HelpTOCNode Id="5e1fe82b-90a3-43a8-8df0-77bbc149ef01" Title="Getting Started">
+      <HelpTOCNode Title="General Installation" Url="UserGuide/Getting Started/Installation.htm" />
+      <HelpTOCNode Title="License Keys" Url="UserGuide/Getting Started/License Keys.htm" />
+    </HelpTOCNode>
+    <HelpTOCNode Id="50547f1b-c324-4eab-952a-0e8a7761f0be" Title="Examples">
+      <HelpTOCNode Title="Basic Usage" Url="UserGuide/Examples/Basic Usage.htm" />
+      <HelpTOCNode Title="Custom Style" Url="UserGuide/Examples/Custom Style.htm" />
+      <HelpTOCNode Title="Docking Position" Url="UserGuide/Examples/Docking Position.htm" />
+      <HelpTOCNode Title="Office Style" Url="UserGuide/Examples/Office Style.htm" />
+      <HelpTOCNode Title="ViewModel Usage" Url="UserGuide/Examples/ViewModel Use.htm" />
+    </HelpTOCNode>
+  </HelpTOCNode>
+  <HelpTOCNode Id="66a69e67-5d18-43e1-a9dc-3cf81c1be545" Title="Online Help">
+    <HelpTOCNode Title="Knowledge Base" Url="Online Help/Knowledge Base.htm" />
+    <HelpTOCNode Title="Support Forum" Url="Online Help/Support Forum.htm" />
+  </HelpTOCNode>
+  <HelpTOCNode Id="8341a431-4f61-491d-8862-4429089a38d5" Title="API Documentation" Url="html/b994f13c-f80f-d1e9-6bec-86cf78ae113a.htm">
+    <HelpTOCNode Id="0c560cd6-e2dd-4fdb-a581-5258b83cff3e" Title="Keyoti.RapidFindReplace.WPF Namespace" Url="html/3b19b32b-a96e-8b5f-bbce-9fbb1337fa76.htm">
+      <HelpTOCNode Id="0a769dde-f511-4bc6-b352-6e4c4559362d" Title="ActionCommand Class" Url="html/3c4f9baa-6620-3459-99ff-4d871c32c7c0.htm">
+        <HelpTOCNode Id="00be1798-577d-4272-8c8b-a2509376cfe4" Title="ActionCommand Constructor " Url="html/d6f28028-3f6f-385f-c68f-052bbb890ff0.htm">
+          <HelpTOCNode Title="ActionCommand Constructor (executeAction, canExecuteFunc)" Url="html/3f053a51-3938-a848-4e84-efeb3d1f4f5a.htm" />
+          <HelpTOCNode Title="ActionCommand Constructor (executeAction, canExecuteFunc)" Url="html/06c142ca-efe5-10c5-43a3-d8d4d592b214.htm" />
+          <HelpTOCNode Title="ActionCommand Constructor (executeAction, canExecuteFunc)" Url="html/822fcf84-65f4-5107-f578-c746156a08d9.htm" />
+        </HelpTOCNode>
+      </HelpTOCNode>
+      <HelpTOCNode Id="60b2439e-ae69-4b1b-a45a-0c9091cbb619" Title="ComClientInteropSupport Class" Url="html/b834f06d-1244-a2ed-78cd-75cd4fd29aeb.htm">
+        <HelpTOCNode Title="ComClientInteropSupport Constructor " Url="html/8ccf8f1b-1f53-dd7a-46a5-884533c0730c.htm" />
+        <HelpTOCNode Title="Key Property " Url="html/61132bf2-f269-5258-8c82-ddf293e4a79e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4b002f4c-1a98-4993-aff5-6f54215df95e" Title="ConverterInstances Class" Url="html/69351795-8225-b738-6e64-65835b6d4a62.htm">
+        <HelpTOCNode Title="ConverterInstances Constructor " Url="html/c4dd6476-24fa-b343-318c-a0745639a7fa.htm" />
+        <HelpTOCNode Title="CamelCaseConverter Field" Url="html/c075f4b4-1de6-0113-b1cb-e0a8912c7d13.htm" />
+        <HelpTOCNode Title="QueryConverter Field" Url="html/96f01ee2-4547-cf39-e314-828905b98ec9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3a167325-c90c-43b3-a683-a1249bbbd830" Title="KLicenseProvider Class" Url="html/685aebc3-f0a1-fbce-224d-9d17cae4c627.htm">
+        <HelpTOCNode Title="KLicenseProvider Constructor " Url="html/6c8ec345-9af3-eb9b-891e-fed25bd6cfde.htm" />
+        <HelpTOCNode Title="GetLicense Method (context, type, instance, allowExceptions)" Url="html/5dea943d-ca1e-4795-f98c-69a79b6eda94.htm" />
+        <HelpTOCNode Title="SetStoredKey Method (key)" Url="html/6099349a-448d-9174-41a6-be007122b66d.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="845f9c96-848c-41a2-9bc5-4198e2f09831" Title="ObservableBackwardsRingBuffer(T) Class" Url="html/adc921a9-57f0-678c-e390-c3a32aa5ef9a.htm">
+        <HelpTOCNode Title="ObservableBackwardsRingBuffer(T) Constructor (capacity)" Url="html/1bef21d7-7904-c194-0935-9b5438dc3b48.htm" />
+        <HelpTOCNode Title="AddItem Method (item)" Url="html/11afedcc-66e5-83aa-a898-438a278757ca.htm" />
+        <HelpTOCNode Title="Capacity Property " Url="html/90d8615c-5e51-dde7-624a-ac4a1b664f7e.htm" />
+        <HelpTOCNode Title="CollectionChanged Event" Url="html/472726d7-57e6-aeac-bd15-c5edb76f414b.htm" />
+        <HelpTOCNode Title="Count Property " Url="html/60547ffc-2ee3-fbb2-59f0-408e0538ef96.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/975bc1a5-11db-94a8-4740-2a18539b47fc.htm" />
+        <HelpTOCNode Title="RemoveStartItem Method " Url="html/92662f2e-f785-429b-3f4e-734abfae3a73.htm" />
+        <HelpTOCNode Title="Resize Method (newSize)" Url="html/8b0faa53-e618-74fc-2040-f97da5e808c0.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="12352610-8aa2-4fdd-b6e7-d734460108d8" Title="OptionProperty Class" Url="html/4d394145-e67b-9eb0-7ad2-f575d7be9b17.htm">
+        <HelpTOCNode Title="OptionProperty Constructor " Url="html/4dcd696f-8ed0-104e-297a-c7dc95da7b2f.htm" />
+        <HelpTOCNode Title="Description Property " Url="html/7de11183-e2fa-5a3d-b95a-802c396ff57a.htm" />
+        <HelpTOCNode Title="FindOptions Property " Url="html/eab19c32-cc85-b316-ed62-d694543e6672.htm" />
+        <HelpTOCNode Title="OptionDependencyProperty Property " Url="html/32afd1f6-98f2-b723-7e84-c0f924e42dde.htm" />
+        <HelpTOCNode Title="OptionName Property " Url="html/a1be8b16-bdbd-b805-1e37-d0b27eb50475.htm" />
+        <HelpTOCNode Title="OptionType Property " Url="html/bd812c81-e839-2381-0c2c-6c987883bd2b.htm" />
+        <HelpTOCNode Title="PropertyChanged Event" Url="html/c67b7a1e-2df2-55d1-134b-2aba0fceeb51.htm" />
+        <HelpTOCNode Title="Value Property " Url="html/2f5e00b7-a6a6-f90f-f2fc-d3840981db45.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="57cb576a-e99a-4960-a3f1-dcbbac59a140" Title="OptionPropertyAttribute Class" Url="html/5c2833fe-d4b9-4fc2-bed7-8117d1e1d362.htm">
+        <HelpTOCNode Title="OptionPropertyAttribute Constructor (description)" Url="html/cb0e926d-58e1-77f5-5aa1-2cef1e9a50f6.htm" />
+        <HelpTOCNode Title="Description Property " Url="html/37883a2b-9e3b-f16c-8c53-19006b69874a.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="7492c613-bc63-4187-98b0-1bd6785542e5" Title="OptionPropertyMetaData Class" Url="html/ca0ffce2-0967-ea15-0cef-44fd11af60bf.htm">
+        <HelpTOCNode Id="dbb751c8-279f-4bfb-9498-2b4a2fd2a2e4" Title="OptionPropertyMetaData Constructor " Url="html/0911acff-0b94-cdb4-7b39-d3d349ee33a2.htm">
+          <HelpTOCNode Title="OptionPropertyMetaData Constructor (defaultValue, description, visibleToUser)" Url="html/3cf458cf-9e30-839a-e97a-460d57b42900.htm" />
+          <HelpTOCNode Title="OptionPropertyMetaData Constructor (defaultValue, description, visibleToUser, callback)" Url="html/a8bb1d01-c47a-065b-7f77-0c7fbc2ae676.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="Description Property " Url="html/720db33a-4924-ee78-99de-7e737150021f.htm" />
+        <HelpTOCNode Title="VisibleToUser Property " Url="html/ca5b835e-d4f3-207d-5a32-e58ad3b03a77.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="994f2df9-a2ae-4c4a-bddc-0e4092fe1936" Title="OptionsViewModel Class" Url="html/264f61c6-d0bc-16d3-b1f0-c64ffeb93708.htm">
+        <HelpTOCNode Title="OptionsViewModel Constructor " Url="html/87dc363d-0c79-3553-c0c2-86b48e34a10b.htm" />
+        <HelpTOCNode Title="ExclusiveFindElementTypes Property " Url="html/769be20d-83d8-8472-d721-f5867c8df1a1.htm" />
+        <HelpTOCNode Title="ExclusiveFindElementTypesProperty Field" Url="html/e5c47480-1baa-1536-679b-3b0bbf736043.htm" />
+        <HelpTOCNode Title="FindAsYouType Property " Url="html/34be37fe-d610-69ab-c72d-9fb6ac10655d.htm" />
+        <HelpTOCNode Title="FindAsYouTypeProperty Field" Url="html/347d88ed-4811-707a-af2c-90e70e6fe6cf.htm" />
+        <HelpTOCNode Title="FindWholeWordsOnly Property " Url="html/f04c2f59-ac55-a5ad-0c9a-f447bf52e072.htm" />
+        <HelpTOCNode Title="FindWholeWordsOnlyProperty Field" Url="html/46d924ef-dc79-b791-4d5a-ee25478188db.htm" />
+        <HelpTOCNode Title="IgnoredElementTypes Property " Url="html/5d9ac9b9-66c7-bed8-79eb-12094a33dc90.htm" />
+        <HelpTOCNode Title="IgnoredElementTypesProperty Field" Url="html/71314dc6-3cc1-4602-2c97-03d7fe00b87b.htm" />
+        <HelpTOCNode Title="IgnorePunctuationCharacters Property " Url="html/e1db5a70-15aa-0ae8-a97c-ecfc8d1cddc9.htm" />
+        <HelpTOCNode Title="IgnorePunctuationCharactersProperty Field" Url="html/6f8bccb5-cdaf-3996-44fc-ab02e4bf5520.htm" />
+        <HelpTOCNode Title="IgnoreWhitespaceCharacters Property " Url="html/ce33f6e1-a8dd-6712-095f-f86c64a88540.htm" />
+        <HelpTOCNode Title="IgnoreWhitespaceCharactersProperty Field" Url="html/8ae4ba17-a9db-fcbc-f425-4adb0b994ce1.htm" />
+        <HelpTOCNode Title="MatchCase Property " Url="html/0907dab2-f2c4-1fd6-2cd4-8ad93bc65d92.htm" />
+        <HelpTOCNode Title="MatchCaseProperty Field" Url="html/00c3b065-9991-f0d2-23c9-bd2c58266939.htm" />
+        <HelpTOCNode Title="MatchPrefix Property " Url="html/45846e5a-8d7d-2c1f-7d29-6b332345ca39.htm" />
+        <HelpTOCNode Title="MatchPrefixProperty Field" Url="html/24727d0b-fd1b-46ac-1660-274d31810a5a.htm" />
+        <HelpTOCNode Title="MatchSuffix Property " Url="html/ab773a49-f13d-50d5-cf29-9afccf8e8bfb.htm" />
+        <HelpTOCNode Title="MatchSuffixProperty Field" Url="html/a51ebfd8-e693-7e7f-ffba-7dd641e81f77.htm" />
+        <HelpTOCNode Title="PropertyChanged Event" Url="html/c2c7e30a-34d9-3557-e274-a04d05bbf4e6.htm" />
+        <HelpTOCNode Title="UseRegularExpressions Property " Url="html/c44e5a46-6d7a-a25a-0998-b344f817683e.htm" />
+        <HelpTOCNode Title="UseRegularExpressionsProperty Field" Url="html/b85054ae-762f-efc6-8b44-461d9e34d348.htm" />
+        <HelpTOCNode Title="UseWildcards Property " Url="html/c4d4316b-688d-e467-bd55-e502730f386c.htm" />
+        <HelpTOCNode Title="UseWildcardsProperty Field" Url="html/952ddaca-07c2-b49a-cbb2-da07471f1ea9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="c65c4c2b-0692-40be-9e4e-7dc65367bb4b" Title="PinnedPopup Class" Url="html/4c7b8f66-797d-2e35-f856-d87d784907fb.htm">
+        <HelpTOCNode Title="PinnedPopup Constructor " Url="html/e95cf9ce-b1b5-2781-c33c-96f791e2ac01.htm" />
+        <HelpTOCNode Title="DockingPosition Property " Url="html/d5913529-c821-05f3-ac4d-4b65ac9035aa.htm" />
+        <HelpTOCNode Title="DockingPositionProperty Field" Url="html/98209bd0-91a9-c30c-ca7d-f96564294c43.htm" />
+        <HelpTOCNode Title="DockRightOffsetX Property " Url="html/c7c31c03-a39d-c20d-341b-1fd85ddbd1a4.htm" />
+        <HelpTOCNode Title="PropertyChanged Event" Url="html/1e062d77-80bd-9faa-25b6-1d8706d9c2f9.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="PinnedPopup.DockPosition Enumeration" Url="html/318a0fd8-503e-8bfd-96eb-e843baae54ba.htm" />
+      <HelpTOCNode Id="cfb5efc8-2e73-4359-9568-a17c213c242c" Title="Query Class" Url="html/814eb410-e9dc-970d-5e6f-3d52617149e8.htm">
+        <HelpTOCNode Title="Query Constructor (queryText)" Url="html/5bdf9df8-70c5-5e8c-d55e-23a436b1e240.htm" />
+        <HelpTOCNode Title="GetTextMatchers Method (textToSearch, findOptions)" Url="html/2763e0a1-9679-de21-60b8-c9dba7e123ea.htm" />
+        <HelpTOCNode Title="ProcessReplacementSyntax Method (replacement, match)" Url="html/6c8087ff-2e48-6d34-9107-74b67887cb24.htm" />
+        <HelpTOCNode Title="PropertyChanged Event" Url="html/096f6063-6ed0-e1da-d809-abfa2a2cc2df.htm" />
+        <HelpTOCNode Title="QueryText Property " Url="html/36904251-2728-698b-5a43-6ce0bae72339.htm" />
+        <HelpTOCNode Title="ReasonInvalid Property " Url="html/ac9ea765-43b7-b000-c8c7-124bfe234042.htm" />
+        <HelpTOCNode Title="Valid Property " Url="html/9caa549f-e763-d422-ab50-402047987c20.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="08f5807c-5bc7-4e09-bfa7-b482f6da29ee" Title="QueryValidationRule Class" Url="html/3474ab36-3e32-98d9-c4e2-e7c82156420f.htm">
+        <HelpTOCNode Title="QueryValidationRule Constructor " Url="html/7cda9a20-3110-da70-3f36-6a6b69104e96.htm" />
+        <HelpTOCNode Title="Query Property " Url="html/c7bc60f7-341b-e585-a971-a0f9db580aee.htm" />
+        <HelpTOCNode Title="Validate Method (value, cultureInfo)" Url="html/9a687ef3-3e12-2c43-4418-4aa4fac56486.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="274234b0-7bb6-4955-b4e4-a86bb1c97aa5" Title="QueuedRun Class" Url="html/22262b0a-3592-5244-3c78-eec844ea1979.htm">
+        <HelpTOCNode Title="QueuedRun Constructor (run)" Url="html/0e8bf20f-cf47-034e-ce16-345ef00efc1a.htm" />
+        <HelpTOCNode Title="HitAvailableText Property " Url="html/603800c0-058e-6ecd-98d0-66a8fd69464c.htm" />
+        <HelpTOCNode Title="Length Property " Url="html/aa84e5ed-ec7f-8e3c-198f-58590585d76d.htm" />
+        <HelpTOCNode Title="RegisterHit Method (lengthOfCharsUsed)" Url="html/0dcb4f93-c9d4-3b45-4985-a6950ea5db68.htm" />
+        <HelpTOCNode Title="Run Property " Url="html/e09d78ff-3c74-6e81-9534-8a7e4e83886d.htm" />
+        <HelpTOCNode Title="Text Property " Url="html/8f452bdd-96e7-3994-b2b4-bb654f38d340.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="48bbe2ee-37b3-4597-bd51-ae10cd23488b" Title="RapidFindReplaceControl Class" Url="html/05b68670-2e44-89c6-9664-084b3f107270.htm">
+        <HelpTOCNode Title="RapidFindReplaceControl Constructor " Url="html/31415d78-7d8c-97b1-9211-3326037f0b98.htm" />
+        <HelpTOCNode Title="AsYouTypeFindMinimumCharacters Property " Url="html/eab386a1-4974-4203-1630-48a184b7d906.htm" />
+        <HelpTOCNode Title="AsYouTypeFindMinimumCharactersProperty Field" Url="html/2a391633-05b8-d26b-df7d-baf52e5197fe.htm" />
+        <HelpTOCNode Title="AvailableFindOptions Property " Url="html/4c905534-0d52-8ca7-2158-82c51264defd.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerBrush Property " Url="html/eedf3ce0-c210-0a49-bc21-8b41196c2f63.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerBrushProperty Field" Url="html/3a3a824e-7acc-b9d5-c7a6-8fe5036b871d.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerPen Property " Url="html/bb61b4e1-fe45-a335-8662-0f67a8d5358a.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerPenProperty Field" Url="html/76db2c9c-01b5-6dba-5c3e-655e222eff91.htm" />
+        <HelpTOCNode Title="BodyIterativeHighlightAdornerBrush Property " Url="html/6e501793-56d1-b93e-393d-a6dcd07b8a53.htm" />
+        <HelpTOCNode Title="BodyIterativeHighlightAdornerBrushProperty Field" Url="html/46d1db5a-d9d4-c270-44cd-29b9129ac020.htm" />
+        <HelpTOCNode Title="CurrentMatch Property " Url="html/ea65a5be-3a6a-7c5a-fa75-3660fb04a2a5.htm" />
+        <HelpTOCNode Title="CurrentMatchProperty Field" Url="html/47256975-0552-5dc4-1017-a645f21eecce.htm" />
+        <HelpTOCNode Title="FindButtonIcon Property " Url="html/604b1587-7821-83dd-2be7-f88d5a45f52c.htm" />
+        <HelpTOCNode Title="FindButtonIconProperty Field" Url="html/2bc29a52-3c77-0b86-ce99-37b50157939f.htm" />
+        <HelpTOCNode Title="FindOptions Property " Url="html/e4802135-600b-81e3-6449-c4e40c520043.htm" />
+        <HelpTOCNode Title="FindScope Property " Url="html/7cac1aee-a521-902a-8a24-4f6f4f7ca535.htm" />
+        <HelpTOCNode Title="FindScopeProperty Field" Url="html/4d52b6b9-ab53-640c-9109-70d00bf678f8.htm" />
+        <HelpTOCNode Title="FinishedSearching Event" Url="html/cf6728ba-fad7-2f6c-fc8c-6c795140f003.htm" />
+        <HelpTOCNode Title="FinishedSearchingEvent Field" Url="html/63e72c62-0478-fa37-9a9f-ba50201ad840.htm" />
+        <HelpTOCNode Title="GetIsFindable Method (element)" Url="html/666e6fb0-43b9-6e8f-2e98-198123728763.htm" />
+        <HelpTOCNode Title="IsFindable Attached Property" Url="html/edca8e5e-c1ee-daa2-e0c6-ccb4f81e1f25.htm" />
+        <HelpTOCNode Title="IsFindableProperty Field" Url="html/99809b8c-4734-b7af-f0ec-1fd2662f1d8f.htm" />
+        <HelpTOCNode Title="IsOptionsDropDownOpen Property " Url="html/fa3ad9f8-213c-4696-fac1-bee83e42096f.htm" />
+        <HelpTOCNode Title="IsOptionsDropDownOpenProperty Field" Url="html/d106bf34-ffb7-c9b0-b89d-f27f7299a7b1.htm" />
+        <HelpTOCNode Title="IsQueryValid Property " Url="html/5c5b1b76-e0cb-4fc3-2135-c707a6fa03a8.htm" />
+        <HelpTOCNode Title="IsQueryValidProperty Field" Url="html/98be0226-6007-5207-330f-9b0016e64ef3.htm" />
+        <HelpTOCNode Title="IsReplaceOpen Property " Url="html/f562253b-e138-dbf9-bbf2-f84b9ccd24be.htm" />
+        <HelpTOCNode Title="IsReplaceOpenProperty Field" Url="html/0f46ff17-bac5-4da6-c0fd-cd36200e5f52.htm" />
+        <HelpTOCNode Title="NoHitsBorderBrushColor Property " Url="html/736c44d2-347e-08d2-6f60-e383a5f9efa0.htm" />
+        <HelpTOCNode Title="NoHitsBorderBrushColorProperty Field" Url="html/1bdbbabc-138b-811a-8df6-aec30a3492f8.htm" />
+        <HelpTOCNode Title="NumberOfHits Property " Url="html/941b82e4-f0cb-a8c4-a99a-a1895206c8f8.htm" />
+        <HelpTOCNode Title="NumberOfHitsProperty Field" Url="html/6eb1ce6f-14b5-6eac-aa98-df85cf01eb5a.htm" />
+        <HelpTOCNode Title="OnApplyTemplate Method " Url="html/2bbefb89-7b32-5c6e-faad-6fd595be7697.htm" />
+        <HelpTOCNode Title="OptionsButtonCheckedIcon Property " Url="html/c0fdd47d-35c7-2e21-6e36-5842f6e94ebb.htm" />
+        <HelpTOCNode Title="OptionsButtonCheckedIconProperty Field" Url="html/9b745468-d43c-a136-c672-c0b1347b388e.htm" />
+        <HelpTOCNode Title="OptionsButtonIcon Property " Url="html/a33e85d6-dc4a-47e8-bdf2-bd286c23c36f.htm" />
+        <HelpTOCNode Title="OptionsButtonIconProperty Field" Url="html/7067ebe9-28be-1017-7816-d87ebb2e094c.htm" />
+        <HelpTOCNode Title="PART_FindButton Property " Url="html/5e150b10-3309-c310-6944-a54c23a7463d.htm" />
+        <HelpTOCNode Title="PART_FindTextBox Property " Url="html/2ce89414-df1f-7b9a-c765-3328bdf286e9.htm" />
+        <HelpTOCNode Title="PART_HistoryList Property " Url="html/5d4f9e7a-3554-537a-0ede-622c3453fcce.htm" />
+        <HelpTOCNode Title="PART_NextMatchButton Property " Url="html/90ab337f-5ab4-2925-c74b-8ab3b846f761.htm" />
+        <HelpTOCNode Title="PART_OptionsButton Property " Url="html/29447964-3caf-9344-39c9-a626d6b06dd8.htm" />
+        <HelpTOCNode Title="PART_OptionsList Property " Url="html/5fdb7a06-383e-8c91-210f-618c8f38cefc.htm" />
+        <HelpTOCNode Title="PART_OptionsPopup Property " Url="html/aa5e357d-a89c-bdd3-d2ce-4508aa4ffe26.htm" />
+        <HelpTOCNode Title="PART_PreviousMatchButton Property " Url="html/d04f94cf-699b-9e6d-1aac-9f732424608b.htm" />
+        <HelpTOCNode Title="PART_ReplaceAllButton Property " Url="html/08a44fcb-56be-e17f-0246-61136caf04ba.htm" />
+        <HelpTOCNode Title="PART_ReplaceButton Property " Url="html/6078cafb-118a-f8ac-f8fe-1cc054c62d42.htm" />
+        <HelpTOCNode Title="PART_ReplaceTextBox Property " Url="html/9b00ca94-bdf0-d1a5-8432-52de0dedaf99.htm" />
+        <HelpTOCNode Title="PropertyChanged Event" Url="html/2741c241-936f-6693-30e3-d4dd054efb12.htm" />
+        <HelpTOCNode Title="Query Property " Url="html/cdf56eef-b02a-b0d9-b4e3-9dfff000d4c8.htm" />
+        <HelpTOCNode Title="QueryContainer Property " Url="html/98f6afd9-7e91-fe49-0e2e-ad5e59f1ca0c.htm" />
+        <HelpTOCNode Title="QueryHistory Property " Url="html/1a31e369-9767-28a7-aa08-d052a848eaee.htm" />
+        <HelpTOCNode Title="QueryHistoryCapacity Property " Url="html/5a3c263d-aae3-de4a-aeac-e0504ab1eebe.htm" />
+        <HelpTOCNode Title="QueryHistoryCapacityProperty Field" Url="html/a69d8b00-a9cc-c297-a531-49806474e141.htm" />
+        <HelpTOCNode Title="QueryHistoryProperty Field" Url="html/1bf645e9-1967-7642-358a-0dfc4f1ee2ee.htm" />
+        <HelpTOCNode Title="QueryProperty Field" Url="html/4ce4f889-7957-b0e2-4823-9f0c55f43cdb.htm" />
+        <HelpTOCNode Title="SetIsFindable Method (element, value)" Url="html/182ec5e4-2176-8a72-1266-1e4c8c74f247.htm" />
+        <HelpTOCNode Title="ViewModel Property " Url="html/973c96af-053e-28d9-c2a8-d6708cdd88d8.htm" />
+        <HelpTOCNode Title="WatermarkText Property " Url="html/97f4b962-5839-6eef-2a78-daa05fe7920b.htm" />
+        <HelpTOCNode Title="WatermarkTextProperty Field" Url="html/73ac7c33-94de-17ef-dcff-7c8a8216724d.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="af18067f-0bd3-42d3-8bda-cab899c2418b" Title="RapidFindReplaceControlViewModel Class" Url="html/7f764428-1e95-572e-3571-9e04e49e37cd.htm">
+        <HelpTOCNode Title="RapidFindReplaceControlViewModel Constructor " Url="html/bc874078-a16d-00ff-eb69-9ad921a3b11c.htm" />
+        <HelpTOCNode Title="AddQueryToHistory Method (query)" Url="html/d8dd5e94-d1bc-b2f0-bc80-ab3e1c230735.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerBrush Property " Url="html/b0e11491-3c49-76be-64be-0f1b34c6782a.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerPen Property " Url="html/4bb15b07-5b1c-f4cf-f1f7-3277fcdf8d9d.htm" />
+        <HelpTOCNode Title="BodyIterativeHighlightAdornerBrush Property " Url="html/07ead252-05ff-5eb5-a985-85fbea4669ab.htm" />
+        <HelpTOCNode Title="BodyIterativeHighlightAdornerPen Property " Url="html/e86266e8-ac10-a200-e209-cd9ee40467fb.htm" />
+        <HelpTOCNode Title="CurrentMatch Property " Url="html/5dce2e57-c791-9e75-5185-136a2dc497fc.htm" />
+        <HelpTOCNode Title="CurrentMatchProperty Field" Url="html/b32790e7-1779-010a-57b3-779ce1b6c193.htm" />
+        <HelpTOCNode Title="FindIterativelyFrom Property " Url="html/758d84f4-310b-cfef-a14c-6c4d88fd089e.htm" />
+        <HelpTOCNode Title="FindOptions Property " Url="html/ad3120c7-d845-50de-51f3-bcaef441a1aa.htm" />
+        <HelpTOCNode Title="FindOptionsProperty Field" Url="html/d8fdb661-2779-bcba-e725-24aacc273b52.htm" />
+        <HelpTOCNode Title="FindScope Property " Url="html/bcb1b609-fc8a-6625-d480-cf0bd1787c73.htm" />
+        <HelpTOCNode Title="FindScopeProperty Field" Url="html/7d0264a2-0017-cd4f-9fdd-111e3d198acc.htm" />
+        <HelpTOCNode Id="90c66e0f-37a1-4aac-a8a3-2b7353bfb968" Title="FindText Method " Url="html/3f1db743-47d0-e2ec-2daa-560d579edc44.htm">
+          <HelpTOCNode Title="FindText Method (searchIn)" Url="html/5c245dc8-6dd9-041d-c55f-c8420dfdd24e.htm" />
+          <HelpTOCNode Title="FindText Method (searchIn, parentUIElementIsFindable)" Url="html/69396442-b0ec-6ddc-d4a9-a64474ea7928.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="FindTextCommand Property " Url="html/96a9de41-33e5-0e90-e859-594534877841.htm" />
+        <HelpTOCNode Id="1952c00a-7134-453b-b62c-5879b41e294b" Title="FindTextIn Method " Url="html/46565ad0-5b22-f535-d60a-0601cfe018e6.htm">
+          <HelpTOCNode Title="FindTextIn Method (runReader, addHighlightDelegate, searchText)" Url="html/644dcd69-1796-8aab-1660-00f555b0801a.htm" />
+          <HelpTOCNode Title="FindTextIn Method (runs, addHighlightDelegate, searchText)" Url="html/fe1b84f0-bb71-7b24-ed5d-c274991a2a59.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="FinishedSearching Event" Url="html/01afe631-3711-63e8-85a6-a9efa7b27034.htm" />
+        <HelpTOCNode Title="GetNextMatch Method (matchers, currentIndex)" Url="html/9877694f-bbdc-ea1c-7e4f-b3b30bf93e4f.htm" />
+        <HelpTOCNode Title="HitCount Method " Url="html/afbe3958-2563-9c0a-a226-0e80a58be3c3.htm" />
+        <HelpTOCNode Title="MaximumHitsToHighlight Property " Url="html/9956b353-cd5f-4e0e-b38c-f9dc04420986.htm" />
+        <HelpTOCNode Title="NumberOfHits Property " Url="html/6f5d3283-27e1-469f-1d0f-b6ddd79520de.htm" />
+        <HelpTOCNode Title="NumberOfHitsProperty Field" Url="html/7f395876-d1fc-361c-aab0-89fe6092bd26.htm" />
+        <HelpTOCNode Title="Query Property " Url="html/2b2dd577-3158-d477-e938-f285f0290001.htm" />
+        <HelpTOCNode Title="QueryHistory Property " Url="html/9644eff6-570e-b9cc-7c03-9b33f3a0b7f9.htm" />
+        <HelpTOCNode Title="QueryHistoryCapacity Property " Url="html/4f77d8ee-ba0f-bb5d-42ed-9b6a0bae8da1.htm" />
+        <HelpTOCNode Title="QueryHistoryCapacityProperty Field" Url="html/bab7a654-474c-a67b-3c76-2d51d4a88a79.htm" />
+        <HelpTOCNode Title="QueryHistoryProperty Field" Url="html/b63749bf-2711-d5d6-bbcf-a8bbf9bca946.htm" />
+        <HelpTOCNode Title="QueryProperty Field" Url="html/88f35bba-ca8e-cff6-6b46-4a0bce5a2b0a.htm" />
+        <HelpTOCNode Title="ReplaceAllMatches Method (replacement)" Url="html/349f8619-e521-99cb-4df3-87d15763d84f.htm" />
+        <HelpTOCNode Title="ReplaceAllMatchesCommand Property " Url="html/b1350961-5aa8-e561-0f3c-aa763a724134.htm" />
+        <HelpTOCNode Title="ReplaceMatch Method (replacement)" Url="html/7419d5a0-b893-c64f-929f-5c54b92e27cc.htm" />
+        <HelpTOCNode Title="ReplaceMatchCommand Property " Url="html/57ff1753-ad0d-bc08-da2e-fb32a2cef6dd.htm" />
+        <HelpTOCNode Title="ResetHighlights Method " Url="html/35ef3f17-8aac-9c38-0f2a-140e1621e9ef.htm" />
+        <HelpTOCNode Title="ScanQueuedRuns Method (runQueue, query, addHighlightDelegate)" Url="html/bc3e4877-3345-72f7-47e3-359c10d42fd6.htm" />
+        <HelpTOCNode Title="SelectNextMatch Method " Url="html/fa549c22-e00a-d10b-1d97-569d3e74fa6b.htm" />
+        <HelpTOCNode Title="SelectNextMatchCommand Property " Url="html/cadb356a-03ba-318d-f1b8-5f4aad3789d1.htm" />
+        <HelpTOCNode Title="SelectPreviousMatch Method " Url="html/e08cb5fa-d8cc-80d3-21ac-44301a5077e5.htm" />
+        <HelpTOCNode Title="SelectPreviousMatchCommand Property " Url="html/30866ed2-a92a-d6ba-5747-1a8868420c1b.htm" />
+        <HelpTOCNode Title="WillSearchInElement Method (element, parentUIElementIsFindable, searchChildren, isFindable)" Url="html/30d757ae-b586-12da-fc0d-0806cc7bf66e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="RapidFindReplaceControlViewModel.AddHighlight Delegate" Url="html/aefd04d0-0e7d-c0c8-2bf3-f8eb3bd12ffd.htm" />
+      <HelpTOCNode Id="4eab16d0-70d4-4631-b0c0-21d684c3381c" Title="RapidFindReplacePopupControl Class" Url="html/405f0005-6ada-7143-954d-bc6e147612e8.htm">
+        <HelpTOCNode Title="RapidFindReplacePopupControl Constructor " Url="html/8a748cb3-e7c0-bf06-a6bc-73d3f8fcb062.htm" />
+        <HelpTOCNode Title="AsYouTypeFindMinimumCharacters Property " Url="html/4fc83bb9-1579-7bf7-d432-15ce9cd4cf34.htm" />
+        <HelpTOCNode Title="AsYouTypeFindMinimumCharactersProperty Field" Url="html/bf51b80d-dc2c-f04f-5e7b-fa13ae3057af.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerBrush Property " Url="html/3b605be7-5fef-bf34-da05-c68b98dae689.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerBrushProperty Field" Url="html/47c13ca2-9cd3-677a-bf27-74fe23cdab24.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerPen Property " Url="html/4d19beb2-b936-ef25-fd92-0bfbb52c83fd.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerPenProperty Field" Url="html/24eb067c-1235-0983-10d1-48eca82acb52.htm" />
+        <HelpTOCNode Title="BodyIterativeHighlightAdornerBrush Property " Url="html/b36c7745-afd5-e2e9-d55d-b0cdb78e98bd.htm" />
+        <HelpTOCNode Title="BodyIterativeHighlightAdornerBrushProperty Field" Url="html/9b4f9764-55c2-a9e8-a31f-0e0143df8f12.htm" />
+        <HelpTOCNode Title="CurrentMatch Property " Url="html/097252ee-8843-e5f4-8765-1efdc99377bb.htm" />
+        <HelpTOCNode Title="CurrentMatchProperty Field" Url="html/af22ce1b-ae90-045b-8794-e6e459668905.htm" />
+        <HelpTOCNode Title="DockingPosition Property " Url="html/8dc730ab-8a04-da2e-7263-90145d037a57.htm" />
+        <HelpTOCNode Title="DockingPositionProperty Field" Url="html/181e6e40-6848-d937-d01a-99dbb1e9e10d.htm" />
+        <HelpTOCNode Title="FindButtonIcon Property " Url="html/3a664d66-41a4-924d-fb74-dd37a222336d.htm" />
+        <HelpTOCNode Title="FindButtonIconProperty Field" Url="html/eebc238c-49e8-dd7a-9ce7-1fb1af0c4911.htm" />
+        <HelpTOCNode Title="FindScope Property " Url="html/a905657f-f6a1-88ce-b311-3e8f1fd6e08d.htm" />
+        <HelpTOCNode Title="FindScopeProperty Field" Url="html/964fcf92-8c95-0dc5-cc4b-93a25305f119.htm" />
+        <HelpTOCNode Title="IsOpen Property " Url="html/3b2e75c4-18ac-1002-2b64-52c10443e48c.htm" />
+        <HelpTOCNode Title="IsOpenProperty Field" Url="html/bd6c6e36-1be2-7ab4-541c-17b79a2ecafe.htm" />
+        <HelpTOCNode Title="IsOptionsDropDownOpen Property " Url="html/70c8d984-07a5-f48f-7eb8-73c12100d61a.htm" />
+        <HelpTOCNode Title="IsOptionsDropDownOpenProperty Field" Url="html/8ba6a10e-77d8-bc78-8e6b-e96a59486bfc.htm" />
+        <HelpTOCNode Title="IsQueryValid Property " Url="html/91013d07-4937-f99d-439a-0819b44613e3.htm" />
+        <HelpTOCNode Title="IsQueryValidProperty Field" Url="html/97014e5e-66d5-b0be-3731-3815f5884454.htm" />
+        <HelpTOCNode Title="IsReplaceOpen Property " Url="html/ccc2d8df-9072-5433-8c39-957d675a301e.htm" />
+        <HelpTOCNode Title="IsReplaceOpenProperty Field" Url="html/85f44d07-3f0c-81bf-6985-32a8a08094dd.htm" />
+        <HelpTOCNode Title="NoHitsBorderBrushColor Property " Url="html/dc69c771-4abb-02d6-12d2-4a4c9b43c0b2.htm" />
+        <HelpTOCNode Title="NoHitsBorderBrushColorProperty Field" Url="html/5c156634-1985-4d65-e564-78f9290af429.htm" />
+        <HelpTOCNode Title="NumberOfHits Property " Url="html/574f1b01-a1de-3d40-19dd-e8724c36e234.htm" />
+        <HelpTOCNode Title="NumberOfHitsProperty Field" Url="html/2aed8e4b-e92d-39ad-7b39-0e75aee384d3.htm" />
+        <HelpTOCNode Title="OnApplyTemplate Method " Url="html/f5c2a769-f74b-3d34-9703-639aa24bb61c.htm" />
+        <HelpTOCNode Title="OptionsButtonCheckedIcon Property " Url="html/c6e94186-2f81-dec1-6b84-7ca378b44a7d.htm" />
+        <HelpTOCNode Title="OptionsButtonCheckedIconProperty Field" Url="html/968c5dd8-a091-3ad5-1dbe-acfc0c65ffb8.htm" />
+        <HelpTOCNode Title="OptionsButtonIcon Property " Url="html/c912e615-9cdc-ae8a-7e5b-9004b737ed22.htm" />
+        <HelpTOCNode Title="OptionsButtonIconProperty Field" Url="html/809a8c49-bf6b-01e8-af36-243ad3cf22fc.htm" />
+        <HelpTOCNode Title="PART_CloseButton Property " Url="html/460a4236-07f2-1366-2bf2-18ca39ec4bb2.htm" />
+        <HelpTOCNode Title="PART_MoveThumb Property " Url="html/c61a5fee-d38b-8545-4909-e9d532bf0095.htm" />
+        <HelpTOCNode Title="PART_Popup Property " Url="html/33b6017b-321f-daaf-6be2-a86a68e74211.htm" />
+        <HelpTOCNode Title="PART_RapidFindReplaceControl Property " Url="html/a4c6b8f0-2461-b8b8-0f8f-266a5b2c271c.htm" />
+        <HelpTOCNode Title="PART_Thumb Property " Url="html/916aaae3-d660-b7d2-c82e-4e7cb1509b98.htm" />
+        <HelpTOCNode Title="PlacementTarget Property " Url="html/18fe23a4-4d71-7472-0b49-5a8160a1a534.htm" />
+        <HelpTOCNode Title="PlacementTargetProperty Field" Url="html/58f8f667-6563-d335-dd8f-e1ff8d7d201b.htm" />
+        <HelpTOCNode Title="PropertyChanged Event" Url="html/9d9a932a-2134-7be9-e478-dad3bfd9bd33.htm" />
+        <HelpTOCNode Title="Query Property " Url="html/86685145-be91-c57a-71ee-4d89f57b3dd9.htm" />
+        <HelpTOCNode Title="QueryHistory Property " Url="html/5277c374-bdb9-fd47-50b5-e63dd0a6506d.htm" />
+        <HelpTOCNode Title="QueryHistoryCapacity Property " Url="html/64517805-5088-c291-594b-015fe7cca5c5.htm" />
+        <HelpTOCNode Title="QueryHistoryCapacityProperty Field" Url="html/f2f24094-d9aa-00d0-9f55-737d33420908.htm" />
+        <HelpTOCNode Title="QueryHistoryProperty Field" Url="html/8b0c1e21-d40e-5981-dfae-4701d65bd67a.htm" />
+        <HelpTOCNode Title="QueryProperty Field" Url="html/eaacf2f6-a638-f7f7-73be-8c56a5094ab3.htm" />
+        <HelpTOCNode Title="StaysOpen Property " Url="html/38321a8b-e172-6668-48da-37a2955463bd.htm" />
+        <HelpTOCNode Title="StaysOpenProperty Field" Url="html/75ac3853-a52a-9a4e-c774-b61cc1973fe1.htm" />
+        <HelpTOCNode Title="WatermarkText Property " Url="html/3317da78-5a74-0602-9dd3-2c66d9b658e1.htm" />
+        <HelpTOCNode Title="WatermarkTextProperty Field" Url="html/e76d5162-ba81-d4c5-2759-878e010c4401.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="012a6a5c-0070-428e-93b8-79c37ec5d7fb" Title="RunQueue Class" Url="html/e440ab0c-09e8-d68a-44bf-2b5959240fe1.htm">
+        <HelpTOCNode Title="RunQueue Constructor (size)" Url="html/74cabd78-7f9f-bfa3-9e83-780d26b2d158.htm" />
+        <HelpTOCNode Title="Clear Method " Url="html/79f49f0d-71a8-1042-3015-8bfda6c6c229.htm" />
+        <HelpTOCNode Title="Clone Method " Url="html/941e9cb8-73fc-38f6-fa14-c8ee6e488239.htm" />
+        <HelpTOCNode Title="Count Property " Url="html/7d511d2a-4588-bf55-d327-521a3452652b.htm" />
+        <HelpTOCNode Title="Dequeue Method " Url="html/3e420824-9ed2-aa68-d6c0-a84c7ed1f076.htm" />
+        <HelpTOCNode Title="Enqueue Method (run)" Url="html/563a521a-0d8c-f2b5-8d13-5b61226c6408.htm" />
+        <HelpTOCNode Title="GetRunLength Method (ptr)" Url="html/91b4ead4-d47d-bef0-d36e-89e2ca3f35ed.htm" />
+        <HelpTOCNode Title="HitPosition Method (ptr, hitLength, ptrOffset, gobbledChars)" Url="html/cd4f1405-7a8f-a143-1ad3-3b1edc7dd297.htm" />
+        <HelpTOCNode Title="Item Property (ptr)" Url="html/f1844d15-9a2b-5d88-fdbd-f11b991c9307.htm" />
+        <HelpTOCNode Title="RemoveRunHoldingPosition Method (ptr, ptrOffset, remainingChars)" Url="html/4fe8e803-7e75-ea0d-19cb-d561d6c1f95c.htm" />
+        <HelpTOCNode Title="Size Property " Url="html/86dc2ee2-b9f2-6559-f30c-35896c0f9567.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="89bf161e-8561-42a2-9306-1aae21d57d9a" Title="StartupRegisterForm Class" Url="html/17fa02ce-d834-a2c5-4aac-6febd0904ecb.htm">
+        <HelpTOCNode Title="StartupRegisterForm Constructor " Url="html/dc3dbc0f-ac33-6db0-bf41-81ce83898488.htm" />
+        <HelpTOCNode Title="Main Method (args)" Url="html/5c55e024-2ce4-ef8f-83c9-c3b2e3898724.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="2cccf0be-8604-41d2-8dbe-ae86a93f427f" Title="Keyoti.RapidFindReplace.WPF.Converters Namespace" Url="html/2aba975c-a71f-b049-293b-c72fd37b21cb.htm">
+      <HelpTOCNode Id="aaa3f55a-d0d3-4ab3-adb4-3ae7170e55f0" Title="BooleanAndConverter Class" Url="html/feb95a11-1cd8-de41-dad7-8163b342ed51.htm">
+        <HelpTOCNode Title="BooleanAndConverter Constructor " Url="html/baa62d94-df6e-8466-e400-f3b680576133.htm" />
+        <HelpTOCNode Title="Convert Method (values, targetType, parameter, culture)" Url="html/4492cef9-7a16-df15-0096-fc9716fa65e0.htm" />
+        <HelpTOCNode Title="ConvertBack Method (value, targetTypes, parameter, culture)" Url="html/71a38596-c891-a74a-41df-6990f84afa22.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3fbbfe9a-5473-4ca1-ab16-01315ca9805d" Title="BooleanCollapsedVisibilityConverter Class" Url="html/1f4493da-2616-02d9-c3a3-1f89bfaa2b50.htm">
+        <HelpTOCNode Title="BooleanCollapsedVisibilityConverter Constructor " Url="html/72124330-a905-f2a7-8d68-1fa11e1ea5fd.htm" />
+        <HelpTOCNode Title="Convert Method (value, targetType, parameter, culture)" Url="html/43fd3f35-eaec-eb97-e5ba-b5e553b4dd10.htm" />
+        <HelpTOCNode Title="ConvertBack Method (value, targetType, parameter, culture)" Url="html/fe88c476-0bd9-ace9-62fb-2cc3b6fcd7da.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="b19d8ae4-51e5-4f7e-93db-554ba499198d" Title="BooleanOrConverter Class" Url="html/6815a162-1d3f-3803-a9e3-cb10c6b79963.htm">
+        <HelpTOCNode Title="BooleanOrConverter Constructor " Url="html/f1246b32-71f3-2f5a-584c-6e3999717537.htm" />
+        <HelpTOCNode Title="Convert Method (values, targetType, parameter, culture)" Url="html/4f8ec54a-2396-121b-b564-5a6092e8f315.htm" />
+        <HelpTOCNode Title="ConvertBack Method (value, targetTypes, parameter, culture)" Url="html/f1ce14c2-bc8c-9bd6-894d-a8969f8272d3.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="70403463-68dd-40a6-b052-eb8c462c0754" Title="CamelCaseConverter Class" Url="html/0103b356-9d65-8778-569b-80321a3764d4.htm">
+        <HelpTOCNode Title="CamelCaseConverter Constructor " Url="html/4f289f5c-bc5b-ddef-9208-9752469c6917.htm" />
+        <HelpTOCNode Title="Convert Method (value, targetType, parameter, culture)" Url="html/4ab23ad0-81f4-9e82-68ea-d52efb470653.htm" />
+        <HelpTOCNode Title="ConvertBack Method (value, targetType, parameter, culture)" Url="html/456a9151-cfa1-9749-d371-dd96255d9721.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6bb59268-5a42-48a3-b3f1-1e8cd18fd9d0" Title="FindReplaceTabIndexConverter Class" Url="html/77e1793d-f9b7-f376-0d8e-d959b5b8a7b5.htm">
+        <HelpTOCNode Title="FindReplaceTabIndexConverter Constructor " Url="html/58888cbc-1e22-0aab-42c1-af5cbbf4261d.htm" />
+        <HelpTOCNode Title="Convert Method (value, targetType, parameter, culture)" Url="html/2df534cc-0abb-324a-3d53-6530b735b34a.htm" />
+        <HelpTOCNode Title="ConvertBack Method (value, targetType, parameter, culture)" Url="html/b7925520-bef0-06ac-faed-fa857c5e4775.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="be5ba52b-37dc-4f18-a8dd-2a1f346a4b8c" Title="QueryConverter Class" Url="html/547f7149-e1f4-eae2-9f55-dbed52ead3c1.htm">
+        <HelpTOCNode Title="QueryConverter Constructor " Url="html/7e9b5b6c-8c5f-6a2c-938e-1b812a6439fa.htm" />
+        <HelpTOCNode Title="Convert Method (value, targetType, parameter, culture)" Url="html/68429e2e-1fff-cfb7-b494-2c9afb8d77d0.htm" />
+        <HelpTOCNode Title="ConvertBack Method (value, targetType, parameter, culture)" Url="html/4c48ddee-f5dc-c745-e869-6b00e0735425.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="c170c08d-32af-472a-994d-07de42da15ec" Title="Keyoti.RapidFindReplace.WPF.FindHandlers Namespace" Url="html/8eddcb88-2fae-d452-7bc6-d8cf7da0b5bd.htm">
+      <HelpTOCNode Id="0f828f48-9cb5-4e29-b091-02203c9d1992" Title="FindHandlerRegistry Class" Url="html/1219d80c-7fd3-07a5-93f5-f749ad9d1fe7.htm">
+        <HelpTOCNode Title="FindHandlerRegistry Constructor " Url="html/f41827ce-a9e5-db49-f279-6f51d32b5f17.htm" />
+        <HelpTOCNode Title="CreateHighlightHandlerFor Method (uiElement, bodyHighlightAdornerBrush, bodyHighlightAdornerPen, bodyIterativeHighlightAdornerBrush, bodyIterativeHighlightAdornerPen)" Url="html/2845017e-3dc0-7c69-7c78-7334a652bc73.htm" />
+        <HelpTOCNode Title="CreateIRunReaderHandlerFor Method (runContainer)" Url="html/9fea05dd-27db-1e31-16e5-7fd0f804c7a3.htm" />
+        <HelpTOCNode Title="RegisterHighlightHandler Method (highlightHandlerType)" Url="html/c80e03bf-40d4-e0a9-dd88-c7e1fffa6629.htm" />
+        <HelpTOCNode Title="RegisterRunReader Method (iRunReaderType)" Url="html/559af673-bc9d-7b9f-42ae-8c9abf29bd15.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="efe57e69-639d-46c2-b38a-0c0ddf1a1282" Title="IRunReader Interface" Url="html/23c48c85-7516-e89d-4269-1d34a38444de.htm">
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/ff5ffc52-682e-b0a3-13b1-0054dd048372.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="3129cd56-1330-4914-98a8-4a4f755e51e8" Title="RunCollectionContainer Class" Url="html/020b7b12-742c-8f8d-3b8e-1ac0721b7830.htm">
+        <HelpTOCNode Title="RunCollectionContainer Constructor (runCollection)" Url="html/bf35608b-7d1a-498d-f2df-66b9e80582f0.htm" />
+        <HelpTOCNode Title="IterationStartIndex Property " Url="html/300ddc59-c91f-1a9b-410e-693cc14d1f0a.htm" />
+        <HelpTOCNode Title="RunCollection Property " Url="html/af3f446f-882f-8a27-84a3-52091e5859af.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="1a8fb81c-6d81-4e26-9f95-4aad02ba3046" Title="Keyoti.RapidFindReplace.WPF.FindHandlers.HighlightHandlers Namespace" Url="html/cf3f5a00-9224-bb46-210b-4819c0bc6291.htm">
+      <HelpTOCNode Id="d42b65d8-d451-4d20-af20-6ec901ed5153" Title="FlowDocumentScrollViewerHighlight Class" Url="html/abc18928-8f62-4a5f-8160-854f8d6b16e9.htm">
+        <HelpTOCNode Title="FlowDocumentScrollViewerHighlight Constructor (start, end, adorner, run)" Url="html/ce63301f-4f32-ab24-0fbb-f46506f63147.htm" />
+        <HelpTOCNode Title="Deselect Method " Url="html/8e05e119-1711-228b-8aaa-5af1eabc94e0.htm" />
+        <HelpTOCNode Title="Select Method " Url="html/e5efb7cd-7f3b-6287-0c05-2ef46aa486bb.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="46644be4-0ff8-459c-876b-3b5d5c5da548" Title="Highlight Class" Url="html/9cfcafd7-0d3c-475c-bfbb-ba9d1a7305f1.htm">
+        <HelpTOCNode Id="8587f67b-2270-4481-96ea-d2c0d09e74d7" Title="Highlight Constructor " Url="html/3bb38426-3383-8c9b-5423-ba98210ae0d6.htm">
+          <HelpTOCNode Title="Highlight Constructor (start, end, adorner, run)" Url="html/500e7d90-20f2-4619-58f1-1cf3c5232e8f.htm" />
+          <HelpTOCNode Title="Highlight Constructor (start, end, adorner, run, runStartIndex)" Url="html/0688069f-8ad5-a4d3-92d5-5f05c3e82247.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="AbsoluteEnd Property " Url="html/1346ff1c-b1fe-8da1-f3c8-4753c188c92f.htm" />
+        <HelpTOCNode Title="AbsoluteStart Property " Url="html/cf5bc6d6-d6ae-fd5f-c4de-f7ac46c92a03.htm" />
+        <HelpTOCNode Title="Deselect Method " Url="html/a5f1ca55-b5a0-b01e-cdfc-618d561c9eb6.htm" />
+        <HelpTOCNode Title="End Property " Url="html/e12f409c-75c2-b90f-8ef6-6eadead58bbe.htm" />
+        <HelpTOCNode Title="Hidden Property " Url="html/a1054be6-99f4-c810-f29a-4e81e4a1a31e.htm" />
+        <HelpTOCNode Title="HighlightedElement Property " Url="html/12697ade-1d26-a675-f147-318f5a9e1230.htm" />
+        <HelpTOCNode Title="IsBeforeOrAt Method (highlight)" Url="html/fb77aea4-41e7-1265-dbbf-b99bcfbc5f94.htm" />
+        <HelpTOCNode Title="IsReplaceable Property " Url="html/6262d37b-dff4-8223-8a6a-0618dfb31a45.htm" />
+        <HelpTOCNode Id="4c93f81c-ab0c-4d7d-a8d8-77df71790201" Title="MoveTo Method " Url="html/ff4ec325-cb74-4643-6f25-2bda772194d7.htm">
+          <HelpTOCNode Title="MoveTo Method (start, end)" Url="html/42adc62c-4bcc-5a56-48cc-bd040855b2f3.htm" />
+          <HelpTOCNode Title="MoveTo Method (run, start, end)" Url="html/797f8dae-f002-c5b9-20eb-80d9de62ab9e.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ReplaceText Method (replacement)" Url="html/71fee46f-cdb1-da3a-04a0-13c26d85e68c.htm" />
+        <HelpTOCNode Title="run Field" Url="html/06fd547d-5f83-0249-db32-97641484179c.htm" />
+        <HelpTOCNode Title="Run Property " Url="html/dd0d95c8-50ea-c827-bc43-e2fbd7d3d25c.htm" />
+        <HelpTOCNode Title="runStartIndex Field" Url="html/f230f867-936a-7a17-1db4-db387a214d3a.htm" />
+        <HelpTOCNode Title="Select Method " Url="html/f684c37a-b174-7c27-c515-b2ab45b37508.htm" />
+        <HelpTOCNode Title="Start Property " Url="html/6c272688-a118-fcc1-31e7-c92c2419a272.htm" />
+        <HelpTOCNode Title="Text Property " Url="html/20bbba56-fd84-ff2d-4ae8-ad8eabc5664d.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="bfc3ae04-a4aa-4b04-a67e-097b297f5513" Title="HighlightAdorner Class" Url="html/403d8534-e5cc-5367-a9ed-b32aa153c88d.htm">
+        <HelpTOCNode Id="a88348a2-e285-4fcf-b514-5b8f4e2d05ff" Title="HighlightAdorner Constructor " Url="html/0ac4a2a4-2297-1470-06c5-9cc32f228a4b.htm">
+          <HelpTOCNode Title="HighlightAdorner Constructor (adornedElement)" Url="html/7ec99814-1423-70e6-312a-c21ded7c16d9.htm" />
+          <HelpTOCNode Title="HighlightAdorner Constructor (adornedElement, run, start, length, horizontalScrollBarHeight, bodyHighlightAdornerBrush, bodyHighlightAdornerPen, bodyIterativeHighlightAdornerBrush, bodyIterativeHighlightAdornerPen)" Url="html/22b1744c-6a9d-2ad7-5a7e-bc3fa0cb6c67.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="AdjustRectanglesToView Method (leftRectangle, rightRectangle, viewPortHeight)" Url="html/c1598498-8ae5-9068-e0ad-caec1b4d9e37.htm" />
+        <HelpTOCNode Title="DrawMultiLine Method (drawingContext, renderBrush, renderPen, leftRectangle, rightRectangle, points)" Url="html/7198ad7a-3b95-7e65-8d1c-34232d341195.htm" />
+        <HelpTOCNode Title="horizontalScrollBarHeight Field" Url="html/b4c0d491-96bb-4612-2ef3-9f71349f3324.htm" />
+        <HelpTOCNode Title="isInViewport Field" Url="html/5a1ec151-5077-79e1-84cf-fdaef80ca290.htm" />
+        <HelpTOCNode Title="IsInViewport Property " Url="html/853758c5-c8b7-4de6-7e18-f262e3db7a0b.htm" />
+        <HelpTOCNode Title="iterativeRenderBrush Field" Url="html/9232aeb3-a2cf-e618-4a74-311d2d732972.htm" />
+        <HelpTOCNode Title="iterativeRenderPen Field" Url="html/2d5b3892-ae23-4889-a333-38462c55a503.htm" />
+        <HelpTOCNode Title="length Field" Url="html/e049aec3-5507-2129-975d-dada441ad165.htm" />
+        <HelpTOCNode Title="normalRenderBrush Field" Url="html/c769d7de-d50e-80e6-4d77-f82d8c6abfb9.htm" />
+        <HelpTOCNode Title="normalRenderPen Field" Url="html/2ab05bf9-945b-2aef-fce8-a31da819fbf3.htm" />
+        <HelpTOCNode Title="OnRender Method (drawingContext)" Url="html/04618487-4576-e07f-9bc9-b47460780f6d.htm" />
+        <HelpTOCNode Title="OnRenderImpossible Method " Url="html/84f09e29-6cd4-db00-fd4b-de4719fbc77c.htm" />
+        <HelpTOCNode Title="renderBrush Field" Url="html/4ce4a3c1-edca-1f33-22da-22f96d811196.htm" />
+        <HelpTOCNode Title="RenderImpossible Event" Url="html/7856b1d8-1735-0eb8-6c1c-c11c74007f2f.htm" />
+        <HelpTOCNode Title="renderPen Field" Url="html/c7893641-a389-d088-979e-e494d4c7554c.htm" />
+        <HelpTOCNode Title="run Field" Url="html/74c8e0d5-5d23-659e-f694-15e7416d69ac.htm" />
+        <HelpTOCNode Title="start Field" Url="html/40e3450c-fce5-75eb-d99e-c2772f714037.htm" />
+        <HelpTOCNode Title="Unregister Method " Url="html/54d6e924-81ee-3b59-6ded-0ed0b8a3f108.htm" />
+        <HelpTOCNode Title="Y Property " Url="html/30e6ae82-d77d-2336-82da-4230696fd16d.htm" />
+        <HelpTOCNode Title="yPos Field" Url="html/38d50fb6-a823-4b13-4303-48745db70295.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="6e1e797c-983a-4883-bf66-bb72e91fa207" Title="HighlightHandler Class" Url="html/a7003384-0f25-201b-55e5-f8f3fc66c8c1.htm">
+        <HelpTOCNode Title="HighlightHandler Constructor (elementToHighlight, bodyHighlightAdornerBrush, bodyHighlightAdornerPen, bodyIterativeHighlightAdornerBrush, bodyIterativeHighlightAdornerPen)" Url="html/6c1ac743-08ab-ce82-ea67-01c891e1882b.htm" />
+        <HelpTOCNode Title="AddHighlight Method (run, index, length)" Url="html/3fa49366-b523-bfbb-4974-397ebb98e440.htm" />
+        <HelpTOCNode Title="AdornerLayer Property " Url="html/18cf663c-c095-480f-4cd9-a30271d4e60a.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerBrush Property " Url="html/89a15b63-fe09-f2fd-8d64-169bbb389925.htm" />
+        <HelpTOCNode Title="BodyHighlightAdornerPen Property " Url="html/6833324f-eb73-0660-67f9-496fa8bb2b01.htm" />
+        <HelpTOCNode Title="BodyIterativeHighlightAdornerBrush Property " Url="html/4e0065ac-6316-198c-c1b2-e0c4d1814ab5.htm" />
+        <HelpTOCNode Title="BodyIterativeHighlightAdornerPen Property " Url="html/12f2b003-1159-5b93-b8d3-0413e2c46e94.htm" />
+        <HelpTOCNode Title="ClearHighlighting Method " Url="html/b1304725-1ca4-5a46-12c9-d0a90dcc3477.htm" />
+        <HelpTOCNode Title="CurrentMatch Property " Url="html/ab7a813e-9b1a-1a03-e6a5-b4b20162199e.htm" />
+        <HelpTOCNode Title="DoesHandle Method (element)" Url="html/a39cddd5-5fe4-523c-b9ce-3d7ecfb4ab8d.htm" />
+        <HelpTOCNode Title="ElementToHighlight Property " Url="html/4e275e48-2906-2fc6-2d32-a44ca64bda7d.htm" />
+        <HelpTOCNode Title="ElementToHighlightGotFocus Event" Url="html/b36c41de-b803-2699-0f16-ef7dc7131fae.htm" />
+        <HelpTOCNode Title="FindHighlightAt Method (start, end, insert, adjust)" Url="html/e0edd906-5f9d-50bd-f5e4-1836a444cc44.htm" />
+        <HelpTOCNode Title="highlightComparer Field" Url="html/cbbd6f0c-8345-72a7-5bdd-fd9f53659d3a.htm" />
+        <HelpTOCNode Title="highlights Field" Url="html/8ba1664e-2ff0-fdf2-f5a4-82d1a5b725ba.htm" />
+        <HelpTOCNode Title="HitCount Property " Url="html/c5a0baa1-fb3c-0b70-a430-dbc1524f2e97.htm" />
+        <HelpTOCNode Title="IsRegistered Method (highlight)" Url="html/52024fb5-3291-b8d5-a0e2-96a4aa5394d3.htm" />
+        <HelpTOCNode Title="MoveHighlight Method (u, start, end)" Url="html/f96cdcfd-9751-f887-1570-199357e50554.htm" />
+        <HelpTOCNode Title="NewSearchNeeded Event" Url="html/14d69313-5260-99fa-6950-943529a75b67.htm" />
+        <HelpTOCNode Id="4414825d-6db2-4ef4-b574-f559770dc1d9" Title="OnNewSearchNeeded Method " Url="html/d303560d-2d01-e841-d335-b08d23020db3.htm">
+          <HelpTOCNode Title="OnNewSearchNeeded Method " Url="html/37616c12-9c7a-e858-1a83-bc47c4389bd9.htm" />
+          <HelpTOCNode Title="OnNewSearchNeeded Method (runs)" Url="html/3fc373c3-1641-d796-02be-aa34d32cc58b.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="RegisterHighlight Method (highlight)" Url="html/814df038-a9fb-6d5c-0ffa-6fd41d8e42d6.htm" />
+        <HelpTOCNode Title="RemoveAdorner Method (adorner)" Url="html/f0ca8693-a52a-cc2b-8f98-fb7dcde911ee.htm" />
+        <HelpTOCNode Id="428925b2-bb58-4e87-a1db-856c323d16df" Title="RemoveHighlight Method " Url="html/cef3a7c7-ea6b-7552-cbe1-18daa9ca9278.htm">
+          <HelpTOCNode Title="RemoveHighlight Method (h)" Url="html/a2edd782-7d13-eb05-db38-0c662d3a98f0.htm" />
+          <HelpTOCNode Title="RemoveHighlight Method (start, end)" Url="html/12ba90cb-e638-1b71-f9ac-60560e22fa0f.htm" />
+        </HelpTOCNode>
+        <HelpTOCNode Title="ResetIterator Method " Url="html/a5df6544-c1de-6ea4-ba7c-71f804450f99.htm" />
+        <HelpTOCNode Title="Shutdown Method " Url="html/8ad7443a-a625-b437-091a-4a44d8a86b85.htm" />
+        <HelpTOCNode Title="track Field" Url="html/3d62b333-63ee-5045-554c-910b769c407e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Title="HighlightHandler.NewSearchNeededEventHandler Delegate" Url="html/5a79c054-ab41-6baf-272f-fc93e4d9a47e.htm" />
+      <HelpTOCNode Id="030dfef6-dae1-4a88-9b46-fc206e1338d1" Title="NewSearchNeededEventArgs Class" Url="html/8ebba0e0-d0e1-8979-1e9b-b2c903556373.htm">
+        <HelpTOCNode Title="NewSearchNeededEventArgs Constructor (r, hh)" Url="html/e409bd0b-1b46-8942-6dd8-90c79ee73f44.htm" />
+        <HelpTOCNode Title="Empty Method (handler)" Url="html/e1e7c148-53ec-0233-761a-94115d89456c.htm" />
+        <HelpTOCNode Title="HighlightHandler Property " Url="html/862931de-c14c-9bdb-62b6-233714773c97.htm" />
+        <HelpTOCNode Title="Runs Property " Url="html/6502db7f-8da1-ac9b-2014-bfabb375271e.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f28ca123-0ae7-456b-bd89-965cf3a1b13e" Title="RichTextBoxHighlight Class" Url="html/2a3d4ba7-037a-bcd0-ffea-4df82202392f.htm">
+        <HelpTOCNode Title="RichTextBoxHighlight Constructor (start, end, adorner, run, runStartIndex)" Url="html/308ee286-19c1-6e1c-b94d-e7d7c6a9c53f.htm" />
+        <HelpTOCNode Title="Deselect Method " Url="html/7ccc95d5-e0a9-ba26-ed7a-fb5320d19cb5.htm" />
+        <HelpTOCNode Title="IsBeforeOrAt Method (highlight)" Url="html/dbc91010-adb9-d9c5-3c80-f014a967b20a.htm" />
+        <HelpTOCNode Title="IsReplaceable Property " Url="html/4676a8bf-1b3d-5120-d1c0-e894890523a0.htm" />
+        <HelpTOCNode Title="MoveTo Method (run, start, end, absStart)" Url="html/45003c18-7d3c-bb95-d879-f4f64f290cc8.htm" />
+        <HelpTOCNode Title="ReplaceText Method (replacement)" Url="html/4b7514a6-1f88-d480-6500-98ef09126929.htm" />
+        <HelpTOCNode Title="Select Method " Url="html/58f35d99-8925-9aaf-0095-2778eae2ec72.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="354c3f1b-9c83-4050-86a3-e264434b54e3" Title="TextBoxBaseHighlightAdorner Class" Url="html/639d7fc7-5c8b-6d61-ad4f-95dfcf378e97.htm">
+        <HelpTOCNode Title="TextBoxBaseHighlightAdorner Constructor (tbb, run, start, length, horizontalScrollBarHeight, bodyHighlightAdornerBrush, bodyHighlightAdornerPen, bodyIterativeHighlightAdornerBrush, bodyIterativeHighlightAdornerPen)" Url="html/d0b46f8f-0fe4-f52a-803f-17e1ac7a366a.htm" />
+        <HelpTOCNode Title="scroller_ScrollChanged Method (sender, e)" Url="html/89671e1a-4c5b-b7dd-3b18-982d20e1999c.htm" />
+        <HelpTOCNode Title="Unregister Method " Url="html/ff730514-b7c3-2a63-bf1c-080752188782.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4c8dd9ec-df67-4b40-a2ad-844f49cd1078" Title="TextBoxHighlight Class" Url="html/c25f98bb-358e-b8e0-f4c8-5a006906a9fc.htm">
+        <HelpTOCNode Title="TextBoxHighlight Constructor (start, end, adorner, run)" Url="html/ee535578-d6f2-a50c-862d-78b6deadd90c.htm" />
+        <HelpTOCNode Title="IsReplaceable Property " Url="html/13881329-2aef-d7d5-5a62-9ea03d7f4dbd.htm" />
+        <HelpTOCNode Title="ReplaceText Method (replacement)" Url="html/2e59e75b-7829-be6f-0ab2-9a4cecde5110.htm" />
+        <HelpTOCNode Title="Select Method " Url="html/ef806095-2492-d72d-0f10-c196fe341355.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="18024580-c9c1-442e-ace8-457d92381d32" Title="TextBoxHighlightAdorner Class" Url="html/deb0c7dc-ae66-be72-21e8-739e4746a641.htm">
+        <HelpTOCNode Title="TextBoxHighlightAdorner Constructor (adornedElement, start, length, horizontalScrollBarHeight, bodyHighlightAdornerBrush, bodyHighlightAdornerPen, bodyIterativeHighlightAdornerBrush, bodyIterativeHighlightAdornerPen)" Url="html/39b08779-740d-b484-f767-4b5c7a7ebb29.htm" />
+        <HelpTOCNode Title="OnRender Method (drawingContext)" Url="html/6d2c07e6-5a2f-f169-cfe7-d55a26ce1224.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="13091d3e-78ad-456d-b03a-eaeb1485c4d6" Title="Keyoti.RapidFindReplace.WPF.FindHandlers.RunReaders Namespace" Url="html/9280ca3d-524d-02f1-ebd3-db312592fc4e.htm">
+      <HelpTOCNode Id="62e11cf5-f0f0-4856-bbfe-99c19230e12f" Title="DocumentViewerBaseRunReader Class" Url="html/60d97cec-9d95-ee8b-8a8b-18f4f12dadf7.htm">
+        <HelpTOCNode Title="DocumentViewerBaseRunReader Constructor (docViewer)" Url="html/c9bf8cb2-068d-bd8c-8d42-5f6c260f15c8.htm" />
+        <HelpTOCNode Title="DoesHandle Method (runContainer)" Url="html/60d9f44b-97d2-7f11-9289-dc69423b54c6.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/f97c8979-6a34-f5a6-6a65-759906fa6600.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="eed184b3-49e8-4b84-a22d-229cda4fdf32" Title="FlowDocumentRunReader Class" Url="html/fcbdde20-4cff-47b0-dc90-e8dc594cc204.htm">
+        <HelpTOCNode Title="FlowDocumentRunReader Constructor (doc)" Url="html/88dca1a8-a1d1-e640-f3f3-62f99ba20d2c.htm" />
+        <HelpTOCNode Title="DoesHandle Method (runContainer)" Url="html/b1ec6208-0e3e-b79e-f5c6-4de803829899.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/e50bf647-a375-146a-af84-c3fa956fc699.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="4fccd840-2689-41d9-a1e2-0ee10eb6b421" Title="FlowDocumentScrollViewerRunReader Class" Url="html/fd5defeb-87b0-873f-2906-5145d8d6a2ef.htm">
+        <HelpTOCNode Title="FlowDocumentScrollViewerRunReader Constructor (docViewer)" Url="html/af33bc84-7cdc-714b-6515-002aacf07758.htm" />
+        <HelpTOCNode Title="DoesHandle Method (runContainer)" Url="html/62b22a10-2703-13c4-a74b-9b3b6e0cdc87.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/c7ec9fa4-7a4c-862a-0713-9a692cf8e602.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="0c9e7017-c810-47ac-8523-3f54507854bc" Title="IContentHostRunReader Class" Url="html/d4d451e3-dbe5-3758-9cb5-d7833bc34955.htm">
+        <HelpTOCNode Title="IContentHostRunReader Constructor (host)" Url="html/4d8e76ab-afa8-d95f-125e-c6b4085afd9f.htm" />
+        <HelpTOCNode Title="DoesHandle Method (runContainer)" Url="html/ae12217b-b7e4-f873-5c75-3799f1c6e146.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/ce79c21d-837d-023a-5ca3-6844def7b37b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="f82f685f-cce7-4208-848b-24b9efd35529" Title="RichTextBoxRunReader Class" Url="html/a29a11ba-3f40-a18e-0cbd-4cac6fe68bb1.htm">
+        <HelpTOCNode Title="RichTextBoxRunReader Constructor (rtb)" Url="html/85a78240-266c-4fa6-c7c1-509ed8e26abe.htm" />
+        <HelpTOCNode Title="DoesHandle Method (runContainer)" Url="html/4676b814-76a5-5da4-163c-92acec7d6ca6.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/1dba9d42-2290-c281-2613-c4e44d7cdff5.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="82c0cc3d-f3f1-411e-a383-e4ee9a0ce748" Title="RunCollectionRunReader Class" Url="html/d2082a5a-5aa2-515c-6821-bbf1a22e9ce4.htm">
+        <HelpTOCNode Title="RunCollectionRunReader Constructor (collection)" Url="html/60b73a84-690b-a75a-c2d8-ef53fae6b397.htm" />
+        <HelpTOCNode Title="DoesHandle Method (runContainer)" Url="html/4749f157-f974-be4f-d193-16daa876c6bc.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/d299d2d4-2d78-2c20-cba5-ea7446cdae1b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="9322ae28-49e1-4f0f-a813-9c94486048c9" Title="TextBoxRunReader Class" Url="html/b5176ef0-1b8f-94a2-2bff-3a9693a0099c.htm">
+        <HelpTOCNode Title="TextBoxRunReader Constructor (tb)" Url="html/2a030b3e-cf1c-4e82-58dc-4fa5f8b2add1.htm" />
+        <HelpTOCNode Title="DoesHandle Method (runContainer)" Url="html/0f436147-28fc-21a2-503d-2e05813ccbe9.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/db66a1e8-a718-0854-a97c-9e8ab67b65af.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+    <HelpTOCNode Id="fbafdccd-1597-47b4-b8af-1ecb2676bbd2" Title="Keyoti.RapidFindReplace.WPF.TextMatching Namespace" Url="html/c4429118-70a8-10af-c06c-0d78e32323d6.htm">
+      <HelpTOCNode Id="cfa7ba1b-232f-45b5-8550-96f7be07aa30" Title="Hit Structure" Url="html/37a564ac-5039-415d-cc3d-378de36f6ec9.htm">
+        <HelpTOCNode Title="Hit Constructor (start, length)" Url="html/a1458112-8340-5e8a-cb26-0562f229c4c3.htm" />
+        <HelpTOCNode Title="Length Property " Url="html/a58f5069-41bf-bd83-5b2a-a857b42075a7.htm" />
+        <HelpTOCNode Title="Start Property " Url="html/d63b0114-91fa-4ef9-8596-46c9ca13654b.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="16732723-c451-4bfb-bf93-289dfce16771" Title="ITextMatcher Interface" Url="html/27dd8ff8-4899-d2ac-b36c-188e4cbf336f.htm">
+        <HelpTOCNode Title="CurrentPosition Property " Url="html/d128a07a-1b83-0215-0808-1a54f2493e29.htm" />
+        <HelpTOCNode Title="GetEnumerator Method " Url="html/2971aaf2-5f2e-dbf7-299a-941988cd79cd.htm" />
+        <HelpTOCNode Title="ProcessReplacementSyntax Method (replace, match)" Url="html/515a813d-99ce-fbc1-3146-65391772d5a4.htm" />
+        <HelpTOCNode Title="SetText Method (text)" Url="html/65fdffce-6d60-422f-70e4-729d4ccdd00e.htm" />
+        <HelpTOCNode Title="UnhookHandlers Method " Url="html/8c1c6fe1-5cb5-7981-991e-16f0de024f9f.htm" />
+      </HelpTOCNode>
+      <HelpTOCNode Id="ab7081ef-3584-4ac5-89bf-e98ae446c80d" Title="TextMatchers Class" Url="html/73e55734-95c3-2053-d15f-1c31d92a47e1.htm">
+        <HelpTOCNode Title="TextMatchers Constructor (initialCapacity)" Url="html/4dabcf36-3624-1cfc-77b6-4a394a20dd36.htm" />
+        <HelpTOCNode Title="UnhookHandlers Method " Url="html/ca4bd45e-9dc2-e969-446b-0830e0ede08c.htm" />
+      </HelpTOCNode>
+    </HelpTOCNode>
+  </HelpTOCNode>
+</HelpTOC>

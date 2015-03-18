@@ -1,0 +1,53 @@
+﻿<Window x:Class="ScopeToCertainControls"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:RapidFindReplace="clr-namespace:Keyoti.RapidFindReplace.WPF;assembly=Keyoti4.RapidFindReplace.WPF"
+        Title="ScopeToCertainControls" Height="373" Width="913" ResizeMode="NoResize">
+    <Grid>
+        <Menu Height="22" VerticalAlignment="Top">
+            <MenuItem Header="_Tools">
+                <MenuItem Header="_Find..." Command="Find"/>
+            </MenuItem>
+        </Menu>
+        <RapidFindReplace:RapidFindReplacePopupControl />
+        <Label Margin="0,22,0,0">Controls on this side will be searched</Label>
+        <RichTextBox Margin="0,54,512,161" RapidFindReplace:RapidFindReplaceControl.IsFindable="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <FlowDocument>
+                <Paragraph>This RichTextBox will be searched.</Paragraph>
+                <Paragraph>If no element in a Window is marked with RapidFindReplace:RapidFindReplaceControl.IsFindable (true or false), then all controls are searched, unless explicitly marked with RapidFindReplace:RapidFindReplaceControl.IsFindable="False".</Paragraph>
+                <Paragraph>If any element is marked RapidFindReplace:RapidFindReplaceControl.IsFindable="True", then it and it's children will be searched, unless explicitly marked with RapidFindReplace:RapidFindReplaceControl.IsFindable="False"</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+        <!-- Everything in this grid will be searched. -->
+        <Border BorderBrush="Blue" BorderThickness="1" Margin="0,187,512,0">
+            <Grid RapidFindReplace:RapidFindReplaceControl.IsFindable="True">
+
+                <TextBox AcceptsReturn="True" TextWrapping="Wrap" Margin="0,0,0,102" >This textbox is in a grid that is marked IsFindable="true" and will be searched.</TextBox>
+                <TextBox AcceptsReturn="True" TextWrapping="Wrap" Margin="0,59,0,0" >This textbox is also in a grid that is marked IsFindable="true" and will be searched.
+
+
+                </TextBox>
+            </Grid>
+        </Border>
+
+
+
+        <Label Margin="400,22,0,0">Controls on this side will NOT be searched</Label>
+        <RichTextBox Margin="400,54,12,161" >
+            <FlowDocument>
+                <Paragraph>This RichTextBox will NOT be searched.</Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+        <!-- Everything in this grid will be searched. -->
+        <Border BorderBrush="Blue" BorderThickness="1" Margin="400,187,12,0">
+            <Grid >
+
+                <TextBox AcceptsReturn="True" TextWrapping="Wrap" Margin="0,0,0,102" >This textbox is in a grid that is NOT marked IsFindable="true" and will not be searched.</TextBox>
+                <TextBox AcceptsReturn="True" TextWrapping="Wrap" Margin="0,59,0,0" >This textbox is also in a grid that is not marked IsFindable="true" and won't be searched.</TextBox>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
+

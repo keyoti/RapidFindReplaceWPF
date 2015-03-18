@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{56800317-65D1-4134-9BEE-46E3BF290BCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidFindReplaceControl", "Keyoti.RapidFindReplaceControl\RapidFindReplaceControl.csproj", "{64CE1DBE-B789-434A-A16C-544D350E158D}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "RapidFindReplace_User_Guide", "http://localhost:15030", "{12ADCF41-3E84-44EC-AF37-31A30B7A4707}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_15030"
+		Debug.AspNetCompiler.PhysicalPath = "RapidFindReplace_User_Guide\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_15030\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_15030"
+		Release.AspNetCompiler.PhysicalPath = "RapidFindReplace_User_Guide\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_15030\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "RapidFindReplace_User_Guide\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RapidFindReplace-Demo-CS", "RapidFindReplace-Demo-CS\RapidFindReplace-Demo-CS.csproj", "{CE4DB2B3-53D7-4D95-90DB-52503146C5E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{56800317-65D1-4134-9BEE-46E3BF290BCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56800317-65D1-4134-9BEE-46E3BF290BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56800317-65D1-4134-9BEE-46E3BF290BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64CE1DBE-B789-434A-A16C-544D350E158D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64CE1DBE-B789-434A-A16C-544D350E158D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64CE1DBE-B789-434A-A16C-544D350E158D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64CE1DBE-B789-434A-A16C-544D350E158D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12ADCF41-3E84-44EC-AF37-31A30B7A4707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12ADCF41-3E84-44EC-AF37-31A30B7A4707}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{12ADCF41-3E84-44EC-AF37-31A30B7A4707}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{CE4DB2B3-53D7-4D95-90DB-52503146C5E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE4DB2B3-53D7-4D95-90DB-52503146C5E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE4DB2B3-53D7-4D95-90DB-52503146C5E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE4DB2B3-53D7-4D95-90DB-52503146C5E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

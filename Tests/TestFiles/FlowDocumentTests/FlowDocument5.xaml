@@ -1,0 +1,6 @@
+﻿<FlowDocument ColumnWidth="400" IsOptimalParagraphEnabled="True" IsHyphenationEnabled="True"  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <Paragraph>
+        Starting in. 2009 we were contracted to perform scoping and analysis for a variety of projects that NorthWind Inc. were a subcontractor for.
+    </Paragraph>
+</FlowDocument>

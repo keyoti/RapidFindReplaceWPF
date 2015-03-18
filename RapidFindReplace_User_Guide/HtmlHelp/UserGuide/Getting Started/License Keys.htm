@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+    <meta name="robots" content="noindex" /><meta name="Keyoti_Search_Location_Category" content="RapidFindReplace WPF" /><meta name="Keyoti_Search_Content_Categories" content="Help / API" />
+<link href="../sans-style.css"  rel='STYLESHEET' type='text/css' />
+<title>RapidFindReplace WPF: License Keys</title>
+        </head>
+<body>
+
+<h2>License Keys</h2>
+<p>The controls, components and classes are licensed using the .NET licensing framework. Fundamental to
+this is the requirement that a file "licenses.licx" is compiled with the project. The licenses.licx files specifies
+class names and their assemblies, that need referencing. <b>It is important that the assembly name (see
+below) matches the name of the assembly that the project references. Eg. if referencing Keyoti4.RapidFindReplace.WPF.dll then the assembly name in the licenses.licx must be "Keyoti4.RapidFindReplace.WPF".</b></p>
+
+<h4>Registering The License Key</h4>
+Either click "Register" in the blue licensing dialog shown when running an unlicensed application, or run
+the registration application (Control-Register.exe) located under the '.NETx_DLLs' folder (choose the same folder as the DLLs you are referencing). Any applications using RapidFindReplace must subsequently be fully rebuilt (Rebuild Solution) to embed the key properly.
+<p><b>TFS and other build server users:</b> 
+
+When using TFS, the build server needs the key registered under the TFSSERVICE user.  To do that, use Control-Register.exe from under  
+ 
+\Program Files\Keyoti Inc\RapidFindReplace WPF\.Net4_DLLs\
+<br/> 
+This requires Keyoti4.RapidFindReplace.WPF.dll to be in the same folder when run.
+ <br/>
+The simplest way to do this is to install RapidFindReplace on the server, but it's not required, the EXE and DLL can be copied over.  Then use "Run As..." on Control-Register and choose TFSSERVICE.
+<br/>
+ <br/>
+
+<b>Information for build servers running under the system account</b>
+<br/>
+If you find you’re unable to use “Run As…” for the local system account then please follow these instructions;
+<pre>
+Download PSTools (from SysInternals, owned by Microsoft) and extract PSexec.exe to a folder on the machine.
+
+<a href="http://technet.microsoft.com/en-us/sysinternals/bb896649">Download from TechNet</a>
+
+<a href="http://keyoti.com/kb/attachments/pstools.zip">Download from Keyoti</a>
+
+Open the CMD prompt using “Run as Administrator” and open the directory containing PSexec.exe
+
+Type;
+
+psexec -i -s cmd.exe 
+
+(-i is for interactive, -s is to run as system)
+
+Then launch Control-Register.exe from the new CMD window, or launch it from the Psexec command instead of CMD.
+</pre>
+</p>
+
+<h4>Visual Studio</h4>
+<p>A licenses.licx file is created (or appended to) when any licensed control is dragged onto the design
+surface. (The licenses.licx file<b> must be in the project that makes the executable.</b>) However, if the controls
+are used directly in code, or if the RapidFindReplaceControlViewModel class is used directly then Visual Studio will not create/append the licenses.licx file. In this case create or open one in the project directory (using Notepad for
+example - make sure it is called "licenses.licx" and not "licenses.licx.txt"). In the licenses.licx file add one of these lines:</p>
+
+<br/><i>If referencing our .NET 4 DLL</i>
+<div class="codeExample">
+<pre>Keyoti.RapidFindReplace.WPF.RapidFindReplaceControlViewModel, Keyoti.RapidFindReplace.WPF.NET4</pre></div>
+
+<p>which follows the standard format</p>
+<div class="codeExample">
+<pre>
+&lt;Class name&gt;, &lt;Assembly name&gt;
+</pre>
+</div>
+
+
+<p>After modifying the licenses.licx file it is important to rebuild the solution. The licenses.licx file can
+contain multiple lines specifying different classes and assemblies.</p>
+
+<p><b>Note:</b> if a licenses.licx file is copied into the project directory, it must also be added to the VS project.</p>
+<p><b>Note:</b> the licenses.licx file must be in the project that creates the executable, if RapidFindReplace is used in a
+usercontrol, the licenses.licx file must still be added to the exe project that uses the usercontrol.</p>
+
+<h4>Command-line compiler</h4>
+
+<p>lc.exe is used to compile a text file (like licenses.licx) into a resource, from there the resource can be
+compiled into the final executable, please see the .NET documentation and Non Visual Studio examples for
+help.</p>
+
+<blockquote>
+<p>lc /target:Form.exe /complist:licenses.licx /i:Keyoti4.RapidFindReplace.WPF.DLL</p><br/>
+<p>csc /res:Form1.exe.licenses /target:exe /reference:Keyoti4.RapidFindReplace.WPF.DLL Form1.cs</p>
+</blockquote>
+
+</body>
+</html>
+
+
+
+
+
+
+<!-- @SortOrder 6 -->

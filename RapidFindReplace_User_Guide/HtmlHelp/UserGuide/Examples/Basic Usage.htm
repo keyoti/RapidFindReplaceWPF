@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta name="robots" content="noindex" /><meta name="Keyoti_Search_Location_Category" content="RapidFindReplace WPF" /><meta name="Keyoti_Search_Content_Categories" content="Help / API" />
+        <link href="../sans-style.css"  rel='STYLESHEET' type='text/css' />
+        <title>RapidFindReplace WPF: Examples: Basic Usage</title>
+    </head>
+<body>
+<div style="min-height:800px">
+<h2>Basic Usage</h2>
+    <p>
+        To implement Find/Replace, just drop <b>RapidFindReplacePopupControl</b> on to a Window - it will automatically scope itself to search over the entire Window and can be opened with the <b>Find</b> ApplicationCommand (i.e. CTRL-F).
+    </p>
+    
+<div class="codeExample"> 
+<span class="codeExampleHeader">XAML</span>
+
+<!-- Wrap code elements to specify the language -->
+<code class="xaml">
+<pre>
+&lt;Window x:Class="RapidFindReplace_Demo_CS.Views.Basic"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        <b>xmlns:RapidFindReplace="clr-namespace:Keyoti.RapidFindReplace.WPF;assembly=Keyoti4.RapidFindReplace.WPF"</b>
+        Title="Basic" Height="237" Width="576"&gt;
+    &lt;Grid&gt;
+        <b>&lt;RapidFindReplace:RapidFindReplacePopupControl/&gt;</b>
+        &lt;TextBox Text="NorthWind Inc." Height="26" Margin="96,39,10,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.108,-1.13"/&gt;
+        &lt;RichTextBox Margin="96,81,10,10" RenderTransformOrigin="-0.78,-1.1" ScrollViewer.VerticalScrollBarVisibility="Visible"&gt;
+            &lt;FlowDocument&gt;
+                &lt;Paragraph&gt;
+                    Starting in 2009 we were contracted to perform scoping and analysis for a variety of projects that NorthWind Inc. were a subcontractor for.
+                &lt;/Paragraph&gt;
+                &lt;Paragraph&gt;
+                    The implementation of the required studies, and their overarching management framework were, going forward, integrated with regards to customer objectives.  
+                        A rigorous, heterogeneous framework was put in place upon which to action out requirements for deliverables.  
+                        Leveraging core competencies and drilling down into stakeholder objectives we were able blue sky it and circle back in relationship to Q4.
+                &lt;/Paragraph&gt;
+            &lt;/FlowDocument&gt;
+        &lt;/RichTextBox&gt;
+        &lt;Label Content="Customer Name" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.474,-0.308" Margin="0,37,0,0"/&gt;
+        &lt;Menu HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="648"&gt;
+            &lt;MenuItem Header="_Tools"&gt;
+                &lt;MenuItem Header="_Find..." Command="Find"/&gt;
+            &lt;/MenuItem&gt;
+        &lt;/Menu&gt;
+        &lt;Label Content="Work Perfomed" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="-0.474,-0.308" Margin="0,79,0,0"/&gt;
+
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+
+
+</pre>
+</code>
+</div>
+
+
+</div>
+</body>
+</html>
