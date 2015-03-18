@@ -4,7 +4,7 @@ A fully featured, rich Find and Replace Control for WPF applications
 <h2>Easily add find &amp; replace to your WPF applications.</h2>
 <strong>RapidFindReplace WPF</strong> allows developers to quickly add a powerful find &amp; replace dialog tool to WPF apps. Enhance user experience with the ability to
 locate &amp; replace strings within textboxes, documents and dozens of controls. RapidFindReplace also features advanced user
-options such as Wildcards, Regular Expressions, Case Sensitivity, Whole Word and many more. 
+options such as Wildcards, Regular Expressions, Case Sensitivity, Whole Word and many more.   You can find more information including <a href="http://keyoti.com/products/rapidfindreplace/wpf/index.html">browsable help and commercial licensing here</a>
  						
 
 <div style="width:100%;text-align:center;padding-top:3px;">
